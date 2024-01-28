@@ -1,0 +1,11 @@
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+i{
+    height: 5vh;
+    width: auto;
+}
