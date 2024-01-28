@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bokor&display=swap");
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.fuenteLogo {
+    font-family: "Bokor", cursive;
+  }
+
+  footer {
+    background-color: #3498db; /* Puedes ajustar este color según tu preferencia */
+    color: #ffffff; /* Letras blancas */
+    margin: 0;
+  }
+  
+  /* Estilos para el formulario dentro del footer */
+  footer form {
+    margin-top: 20px;
+  }
+  
+  /* Estilos para los enlaces del footer */
+  footer a {
+    color: #ffffff;
+  }
+  
+  /* Estilos para los íconos de redes sociales */
+  footer i {
+    color: #ffffff;
+  }
+  
+  /* Estilos para el texto de copyright */
+  footer small {
+    color: #ffffff;
+  }
