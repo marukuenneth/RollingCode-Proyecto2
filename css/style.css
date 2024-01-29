@@ -1,7 +1,9 @@
 *{
     justify-content: center;
 }
-
+body{
+    padding: auto 50px;
+}
 /* <!-- ***** ENCABEZADO *****--> */
 .encabezado{
     display: flex;
@@ -73,7 +75,7 @@
     justify-content: center;
     text-align: center;
     padding: 5% 20%;
-    background: #f3f3f3;
+    background: #f6f6f6;
     font-size: 5%;
 }
 .texto-servicios h1{
@@ -89,7 +91,7 @@
     justify-content: center;
     align-items: center;
     background: #f6f6f6;
-    min-height: 70vh;
+    min-height: 50vh;
 
 }
 .container{
@@ -143,7 +145,7 @@
 .container .card:hover .card-text h2{
 
     opacity: 1;
-    transform: translateY(-70px);
+    transform: translateY(-40px);
 }
 .container .card .card-text h3{
     position: relative;
@@ -179,6 +181,8 @@
     font-weight: 600;
 }
 
+
+/* <!-- ***** ANIMACION DE COLOR *****--/!>*/
 .container .card span{
     transition: 0.5;
     opacity: 0;
@@ -270,4 +274,62 @@
     {
         transform: translateY(-100%);
     }
+}
+
+/*<!-- ***** HORARIOS DE ATENCION Y EXTRAS ***** --> */
+
+.extras{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evently;
+    flex-wrap: wrap;
+    padding: 30px 50px;
+    background-color: #f6f6f6;
+}
+.extras1, .extras2{
+    height: 400px;
+    width: 400px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 50px;
+}
+.extras1{
+    background-color: #f6f6f6;
+    border: grey 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: auto;
+    padding: 30px;
+}
+.extras1 img{
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+.extras1 h1{
+    font-size: 20px;
+}
+.extras1 p{
+    font-size: 15px;
+}
+.extras-contenido{
+    display: flex
+}
+.extras-contenido-texto{
+    margin: 20px;
+}
+----------------------------------
+.extras2{
+    background-color: #1779ff;
+}
+.extras2 h1, li, h2,h3{
+    position: relative;
+    color: white;
+    z-index: 1;
+}
+.extras2 li{
+    text-decoration: none;
 }
