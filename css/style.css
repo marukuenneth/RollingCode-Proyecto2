@@ -1,3 +1,6 @@
+*{
+    justify-content: center;
+}
 .encabezado{
     display: flex;
     flex-direction: row;
@@ -20,4 +23,41 @@
 }
 .ubicacion_texto{
     padding-left: 10px;
+}
+.carousel{
+    width: 100%;
+    height: 50vmax;
+    overflow: hidden;
+}
+.carousel>img{
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+.carousel-caption2 {
+    /* width: 100vmax;
+    height: 100vmax; */
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20% 10% 1% 10%;
+
+    color: #fff;
+    text-align: center;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(rgba(5,7,12,0.3),rgba(5,7,12,0.4));
+    position: absolute;
+}
+.carousel-caption2>h5{
+    font-size: 25px;
+}
+.carousel-caption2>p{
+    font-size: 20px;
 }
