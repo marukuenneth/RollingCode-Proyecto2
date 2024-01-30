@@ -53,22 +53,13 @@ body{
 
 }
 
-/* @media only screen and (max-width: 768px) {
-    .carrusel-caption2 {
-      width: 80vw;
-      position: relative;
-      margin: auto;
-      font-size: 100%;
-      display: flex;
-    }
-
-} */
 .carousel-caption2>h5{
     font-size: 200%;
 }
 .carousel-caption2>p{
     font-size: 150%;
 }
+
 
 /* <!-- ***** TEXO DE SERVICIOS *****--> */
 .texto-servicios{
@@ -286,13 +277,17 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     padding: 30px 50px;
-    background-color: #f6f6f6;
+    
     position: absolute; */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding: 30px;
+    margin: 0%;
+    background-color: #f6f6f6;
+    z-index: 1;
 }
 
 .extras1, .extras2{
@@ -302,14 +297,13 @@ body{
     padding: 10px;
 }
 .extras1{
+    width: 500px;
     background-color: #f6f6f6;
-    border: grey 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
     align-items: start;
-    width: auto;
     padding: 30px;
 }
 .extras1 img{
@@ -359,4 +353,24 @@ body{
 .extras2-contenido h2{
     color: rgb(238, 4, 4);
     text-align: center;
+}
+
+/* MEDIA QUERY - RESPONSIVE*/
+
+/* Media query para dispositivos móviles */
+@media (max-width: 767px) {
+    .carousel-caption2  {
+        align-items: center;
+        padding-top: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Estilos específicos para tablets */
+    .carousel-caption2  {
+      align-items: center;
+      padding-top: 70px;
+    }
 }
