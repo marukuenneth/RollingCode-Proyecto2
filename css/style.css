@@ -40,27 +40,29 @@ body{
     height: auto;
     object-fit: contain;
 }
-.carousel-caption2 {
-    width: 100vmax;
+ .carousel-caption2 {
+   width: 100vmax;
     height: 100vmax;
-    /* height: 100%;
-    width: 100%; */
     top: 0;
     left: 0;
     padding: 20% 20% 1% 20%;
-
     color: #fff;
     text-align: center;
-    
-  /*   display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-     */
     background: linear-gradient(rgba(5,7,12,0.3),rgba(5,7,12,0.4));
     position: absolute;
+
 }
+
+/* @media only screen and (max-width: 768px) {
+    .carrusel-caption2 {
+      width: 80vw;
+      position: relative;
+      margin: auto;
+      font-size: 100%;
+      display: flex;
+    }
+
+} */
 .carousel-caption2>h5{
     font-size: 200%;
 }
@@ -279,19 +281,25 @@ body{
 /*<!-- ***** HORARIOS DE ATENCION Y EXTRAS ***** --> */
 
 .extras{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-evently;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 30px 50px;
     background-color: #f6f6f6;
+    position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
 .extras1, .extras2{
     height: 400px;
     width: 400px;
     flex-wrap: wrap;
     padding: 10px;
-    margin: 50px;
 }
 .extras1{
     background-color: #f6f6f6;
