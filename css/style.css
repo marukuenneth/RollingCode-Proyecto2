@@ -41,10 +41,10 @@ body{
     object-fit: contain;
 }
 .carousel-caption2 {
-    /* width: 100vmax;
-    height: 100vmax; */
-    height: 100%;
-    width: 100%;
+    width: 100vmax;
+    height: 100vmax;
+    /* height: 100%;
+    width: 100%; */
     top: 0;
     left: 0;
     padding: 20% 20% 1% 20%;
@@ -52,12 +52,12 @@ body{
     color: #fff;
     text-align: center;
     
-    display: flex;
-    flex-wrap: wrap;
+  /*   display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
+     */
     background: linear-gradient(rgba(5,7,12,0.3),rgba(5,7,12,0.4));
     position: absolute;
 }
@@ -299,6 +299,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: nowrap;
     align-items: start;
     width: auto;
     padding: 30px;
@@ -323,13 +324,31 @@ body{
 }
 ----------------------------------
 .extras2{
-    background-color: #1779ff;
+    background-color: #1773ff;
+    text-align: center;
 }
-.extras2 h1, li, h2,h3{
+.extras2 h3, li, h2{
     position: relative;
     color: white;
-    z-index: 1;
+    list-style-type: none;
+
 }
-.extras2 li{
-    text-decoration: none;
+.extras2-contenido{
+    border: 3px solid white;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.extras2-horario{
+    border-top: 3px solid white;
+    padding-top: 10px;
+    text-align: left;
+    justify-content: center;
+}
+.extras2 h1{
+ color: white;
+}
+.extras2-contenido h2{
+    color: rgb(238, 4, 4);
+    text-align: center;
 }
