@@ -1,11 +1,13 @@
-*{
+* {
     justify-content: center;
 }
-body{
+
+body {
     padding: auto 50px;
 }
+
 /* <!-- ***** ENCABEZADO *****--> */
-.encabezado{
+.encabezado {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -13,80 +15,81 @@ body{
     padding: 10px;
 }
 
-.logo>a>img{
+.logo>a>img {
     height: 15vh;
     width: auto;
 }
-.ubicacion>img{
+
+.ubicacion>img {
     height: 9vh;
     width: auto;
 }
-.ubicacion{
+
+.ubicacion {
     display: flex;
     align-items: center;
 }
-.ubicacion_texto{
+
+.ubicacion_texto {
     padding-left: 10px;
 }
 
 /* <!-- ***** CARRUSEL DE FOTOS *****--> */
-.carousel{
+.carousel {
     width: 100%;
     height: 50vmax;
     overflow: hidden;
 }
-.carousel>img{
+
+.carousel>img {
     width: auto;
     height: auto;
     object-fit: contain;
 }
+
 .carousel-caption2 {
-    /* width: 100vmax;
-    height: 100vmax; */
-    height: 100%;
-    width: 100%;
+    width: 100vmax;
+    height: 100vmax;
     top: 0;
     left: 0;
     padding: 20% 20% 1% 20%;
-
     color: #fff;
     text-align: center;
-    
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    background: linear-gradient(rgba(5,7,12,0.3),rgba(5,7,12,0.4));
+    background: linear-gradient(rgba(5, 7, 12, 0.3), rgba(5, 7, 12, 0.4));
     position: absolute;
+
 }
-.carousel-caption2>h5{
+
+.carousel-caption2>h5 {
     font-size: 200%;
 }
-.carousel-caption2>p{
+
+.carousel-caption2>p {
     font-size: 150%;
 }
 
+
 /* <!-- ***** TEXO DE SERVICIOS *****--> */
-.texto-servicios{
+.texto-servicios {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     padding: 5% 20%;
     background: #f6f6f6;
-    font-size: 5%;
-}
-.texto-servicios h1{
-    font-size: 30px;
-}
-.texto-servicios h4{
-    font-size: 20px;
+    font-size: 3rem;
 }
 
+/* .texto-servicios h1 {
+    font-size: 30px;
+}
+
+.texto-servicios h4 {
+    font-size: 20px;
+} */
+
 /* <!-- ***** TARJETAS *****--> */
-.tarjetas{
+.tarjetas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,7 +97,8 @@ body{
     min-height: 50vh;
 
 }
-.container{
+
+.container {
     width: 700px;
     display: flex;
     flex-direction: row;
@@ -102,7 +106,8 @@ body{
     align-items: center;
     flex-wrap: wrap;
 }
-.container .card{
+
+.container .card {
     position: relative;
     width: 300px;
     height: 300px;
@@ -115,10 +120,12 @@ body{
     overflow: hidden;
 
 }
-.container .card:hover{
+
+.container .card:hover {
     opacity: 1;
 }
-.container .card::before{
+
+.container .card::before {
     content: '';
     position: absolute;
     top: 2px;
@@ -128,11 +135,13 @@ body{
     background: rgba(255, 255, 255, 0.2);
     pointer-events: none;
 }
-.container .card .card-text{
+
+.container .card .card-text {
     padding: 30px;
     text-align: center;
 }
-.container .card .card-text h2{
+
+.container .card .card-text h2 {
     position: absolute;
     right: 30px;
     font-size: 4em;
@@ -142,12 +151,14 @@ body{
     opacity: 0.1;
     transition: 1s;
 }
-.container .card:hover .card-text h2{
+
+.container .card:hover .card-text h2 {
 
     opacity: 1;
     transform: translateY(-40px);
 }
-.container .card .card-text h3{
+
+.container .card .card-text h3 {
     position: relative;
     font-size: 1.5em;
     color: #fff;
@@ -157,7 +168,8 @@ body{
     transition: 0.5s;
 
 }
-.container .card .card-text p{
+
+.container .card .card-text p {
     position: relative;
     font-size: 1em;
     color: black;
@@ -167,10 +179,13 @@ body{
     transition: 0.5s;
 
 }
-.container .card:hover .card-text h3, .container .card:hover .card-text p{
+
+.container .card:hover .card-text h3,
+.container .card:hover .card-text p {
     opacity: 1;
 }
-.container .card .card-text a{
+
+.container .card .card-text a {
     display: inline-block;
     margin-top: 15px;
     padding: 8px 15px;
@@ -183,16 +198,18 @@ body{
 
 
 /* <!-- ***** ANIMACION DE COLOR *****--/!>*/
-.container .card span{
+.container .card span {
     transition: 0.5;
     opacity: 0;
 
 }
-.container .card:hover span{
+
+.container .card:hover span {
     opacity: 1;
 
 }
-.container .card span:nth-child(1){
+
+.container .card span:nth-child(1) {
     position: absolute;
     top: 0;
     left: 0;
@@ -203,17 +220,16 @@ body{
 }
 
 @keyframes animate1 {
-    0%
-    {
+    0% {
         transform: translateX(-100%);
     }
-    100%
-    {
+
+    100% {
         transform: translateX(100%);
     }
 }
 
-.container .card span:nth-child(2){
+.container .card span:nth-child(2) {
     position: absolute;
     top: 0;
     right: 0;
@@ -225,16 +241,16 @@ body{
 }
 
 @keyframes animate2 {
-    0%
-    {
+    0% {
         transform: translateY(-100%);
     }
-    100%
-    {
+
+    100% {
         transform: translateY(100%);
     }
 }
-.container .card span:nth-child(3){
+
+.container .card span:nth-child(3) {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -245,16 +261,16 @@ body{
 }
 
 @keyframes animate3 {
-    0%
-    {
+    0% {
         transform: translateX(100%);
     }
-    100%
-    {
+
+    100% {
         transform: translateX(-100%);
     }
 }
-.container .card span:nth-child(4){
+
+.container .card span:nth-child(4) {
     position: absolute;
     top: 0;
     left: 0;
@@ -266,70 +282,138 @@ body{
 }
 
 @keyframes animate4 {
-    0%
-    {
+    0% {
         transform: translateY(100%);
     }
-    100%
-    {
+
+    100% {
         transform: translateY(-100%);
     }
 }
 
 /*<!-- ***** HORARIOS DE ATENCION Y EXTRAS ***** --> */
 
-.extras{
-    display: flex;
+.extras {
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-evently;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 30px 50px;
+    
+    position: absolute; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin: 0%;
     background-color: #f6f6f6;
+    z-index: 1;
+    padding: 15vh;
 }
-.extras1, .extras2{
+-----------------------------
+.extras1,
+.extras2 {
     height: 400px;
     width: 400px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     padding: 10px;
-    margin: 50px;
 }
-.extras1{
+
+.extras1 {
+    width: 500px;
     background-color: #f6f6f6;
-    border: grey 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-wrap: nowrap;
     align-items: start;
-    width: auto;
     padding: 30px;
 }
-.extras1 img{
+
+.extras1 img {
     border-radius: 100%;
     height: 100px;
     width: 100px;
     object-fit: cover;
 }
-.extras1 h1{
+
+.extras1 h1 {
     font-size: 20px;
 }
-.extras1 p{
+
+.extras1 p {
     font-size: 15px;
 }
-.extras-contenido{
+
+.extras-contenido {
     display: flex
 }
-.extras-contenido-texto{
+
+.extras-contenido-texto {
     margin: 20px;
 }
+
 ----------------------------------
-.extras2{
-    background-color: #1779ff;
+
+.extras2 {
+    background-color: #1773ff;
+    text-align: center;
 }
-.extras2 h1, li, h2,h3{
+
+.extras2 h3,
+.extras2 p,
+.extras2 h2 {
     position: relative;
     color: white;
-    z-index: 1;
+    list-style-type: none;
+
 }
-.extras2 li{
-    text-decoration: none;
+
+.extras2-contenido {
+    border: 3px solid white;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.extras2-horario {
+    border-top: 3px solid white;
+    padding-top: 10px;
+    text-align: left;
+    justify-content: center;
+}
+
+.extras2 h1 {
+    color: white;
+}
+
+.extras2-contenido h2 {
+    color: rgb(238, 4, 4);
+    text-align: center;
+}
+
+/* <!-- ***** SOLICITAR TURNO ***** --> */
+.solicitar-turnos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    background-color: #fff;
+    flex-wrap: nowrap;
+    padding: 40vh;
+}
+.solicitar-turnos-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 3rem;
 }

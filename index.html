@@ -67,7 +67,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
                         <img src="./assets/clinica1.jpg" class="d-block w-10 carousel" alt="foto clinica 1">
-                        <div class="carousel-caption2 d-none d-md-block ">
+                        <div class=" carousel-caption2">
                             <img src="/assets/rolling simbolo.png" style="height: 50px;">
                             <h5>La mejor atención del país</h5>
 
@@ -78,7 +78,7 @@
                     </div>
                     <div class="carousel-item" data-bs-interval="10000">
                         <img src="./assets/clinica2.jpg" class="d-block w-10 carousel" alt="foto clinica 2">
-                        <div class="carousel-caption2 d-none d-md-block">
+                        <div class="carousel-caption2">
                             <img src="/assets/rolling simbolo.png" style="height: 50px;">
                             <h5>Investigación. Educación. Tratamiento</h5>
                             <p>Clínica amplia donde la curación, la enseñanza y el descubrimiento se unen</p>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="carousel-item" data-bs-interval="10000">
                         <img src="/assets/clinica3.jpg" class="d-block w-10 carousel" alt="foto clinica 3">
-                        <div class="carousel-caption2 d-none d-md-block">
+                        <div class="carousel-caption2">
                             <img src="/assets/rolling simbolo.png" style="height: 50px;">
                             <h5>El equilibrio perfecto entre salud y cuidado</h5>
                             <p>El mejor resultado para cada paciente en todo momento</p>
@@ -111,7 +111,6 @@
         <div class="texto-servicios">
             <h1><span style="color: darkcyan;">SERVICIOS</span><span style="color: rgb(60, 132, 255);"> Y ESPECIALIDADES
                     MÉDICAS</span></h1>
-
             <h4>
                 Confiados en que la mejor prevención es un diagnóstico temprano, sumamos servicios, equipamiento y
                 especialidades médicas.
@@ -129,9 +128,9 @@
                     <span></span>
                     <div class="card-text">
                         <h2>01</h2>
-                        <h3>titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt odio tenetur hic,
-                            earum impedit totam laborum, vero rerum vel quam velit.</p>
+                        <h3>Servicios</h3>
+                        <p>Nuestros servicios son de primer nivel, desde un equipo de enfermeria destacable hasta unos
+                            profesionales que es reconocible en todo el país.</p>
                         <a href="#">Conocer más</a>
                     </div>
                 </div>
@@ -142,9 +141,9 @@
                     <span></span>
                     <div class="card-text">
                         <h2>02</h2>
-                        <h3>titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt odio tenetur hic,
-                            earum impedit totam laborum, vero rerum vel quam velit.</p>
+                        <h3>Equipo ambulatorio</h3>
+                        <p>Contamos con los mejores equipados y vanguardistas, competentes ante cualquier emergencia y
+                            necesidad de nuestros pacientes.</p>
                         <a href="#">Conocer más</a>
                     </div>
                 </div>
@@ -155,9 +154,9 @@
                     <span></span>
                     <div class="card-text">
                         <h2>03</h2>
-                        <h3>titulo</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sunt odio tenetur hic,
-                            earum impedit totam laborum, vero rerum vel quam velit.</p>
+                        <h3>Salas Quirúrgicas</h3>
+                        <p>Contamos con amplias salas quirúrgicas, grandes, nuevas y novedosas para cualquier tipo de
+                            intervención.</p>
                         <a href="#">Conocer más</a>
                     </div>
                 </div>
@@ -191,21 +190,77 @@
                     </div>
                 </div>
             </div>
-            <div class="extras2" style="background-color: #1779ff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px 30px;">
-                <h1>Horarios de atencion</h1>
-                <div>
-                    <ul>
-                        <li>Lunes - Viernes <span>07:00-23:00</span></li>
-                        <li>Sábados - Domingos <span>07:00-13:00</span></li>
-                    </ul>
+            <div class="extras2"
+                style="background-color: #1779ff; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px 30px;">
+                <h1>Horarios de atención</h1>
+                <div class="extras2-horario">
+                    <p>Lunes - Viernes <span>07:00-23:00</span></p>
+                    <p>Sábados - Domingos <span>07:00-13:00</span></p>
                 </div>
-                <div>
+                <div class="extras2-contenido">
                     <h3>Guardia y emergencias</h3>
                     <h2>24hs</h2>
                     <h1>0810 543 1010</h1>
                 </div>
             </div>
         </div>
+
+        <!-- ***** SOLICITAR TURNO ***** -->
+        <div class="solicitar-turnos">
+            <div class="solicitar-turnos-texto">
+                <h2>Solicitar Turnos</h2>
+                <p>Para poder solicitar un turno, por favor, ingrese a su cuenta personal como paciente. En caso de no
+                    tener una cuenta propia, regístrese.</p>
+            </div>
+            <div>
+                <a href=""><button type="button" class="btn btn-primary">Continuar</button></a>
+            </div>
+            <!-- <div class="formulario">
+                <form action="/action_page.php" method="post">
+                    <input type="text" id="fname" name="nombre" placeholder="Nombre*" maxlength="25" required
+                        aria-required="true"><br><br>
+
+                    <input type="text" id="Apellido" name="apellido" placeholder="Apellido*" maxlength="25" required
+                        aria-required="true"><br><br>
+
+                    <input type="email" id="email " name="email" placeholder="E-mail*" required
+                        aria-required="true"><br><br>
+
+                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono*" maxlength="15" required
+                        aria-required="true"><br><br>
+
+                    <select name="especialidad" class="" aria-required="true" aria-invalid="false"
+                        aria-placeholder="Especialidad">
+                        <option value="Clinica Médica">Clinica Médica</option>
+                        <option value="Cardiología">Cardiología</option>
+                        <option value="Cirugía General">Cirugía General</option>
+                        <option value="Clinica Médica">Clinica Médica</option>
+                        <option value="Densitometría">Densitometría</option>
+                        <option value="Dermatología">Dermatología</option>
+                        <option value="Diagnóstico por Imágenes">Diagnóstico por Imágenes</option>
+                        <option value="Ecodopler">Ecodopler</option>
+                        <option value="Ecografía">Ecografía</option>
+                        <option value="Gastroenterología">Gastroenterología</option>
+                        <option value="Ginecología">Ginecología</option>
+                        <option value="Laboratorio de análisis clínicos">Laboratorio de análisis clínicos</option>
+                        <option value="Mamografía Digital">Mamografía Digital</option>
+                        <option value="Neurología">Neurología</option>
+                        <option value="Oftalmología">Oftalmología</option>
+                        <option value="Oncología">Oncología</option>
+                        <option value="Ortopantomografía">Ortopantomografía</option>
+                        <option value="Ortopedia">Ortopedia</option>
+                        <option value="Otorrinolaringología">Otorrinolaringología</option>
+                        <option value="Pediatría">Pediatría</option>
+                        <option value="Resonancia Mangnética">Resonancia Mangnética</option>
+                    </select><br><br>
+                    <label for="consulta">Motivo de la consulta</label><br>
+                    <textarea id="consulta" name="consulta" rows="4" cols="20" maxlength="100"
+                        required></textarea><br><br>
+                    <input type="submit" value="Solicitar">
+                </form>
+            </div> -->
+        </div>
+
 
     </main>
     <footer></footer>
