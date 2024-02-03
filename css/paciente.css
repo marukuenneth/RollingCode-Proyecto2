@@ -81,7 +81,7 @@ body {
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
     position: relative;
-    max-width: 750px;
+    max-width: 850px; /* ajustable */
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
