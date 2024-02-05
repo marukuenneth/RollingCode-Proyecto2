@@ -15,7 +15,7 @@ header {
     background-color: #fff;
     padding: 20px 40px;
     display: flex; 
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center; 
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05); 
 }
@@ -81,7 +81,7 @@ header ul li a:hover::before {
 header .search {
     position: relative; 
     display: flex; 
-    justify-content: center; 
+    justify-content: start; 
     align-items: center; 
     font-size: 1.5em; 
     z-index: 10; 
@@ -115,7 +115,7 @@ header .searchBox input {
     color: #333; 
     font-size: 1.25em; 
     background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(24, 137, 224, 0.5);
 }
 
 /* Estilo del botón de búsqueda en el encabezado */
@@ -153,6 +153,9 @@ header .closeBtn.active {
     display: none;
 }
 
+.hide{
+    display: none;
+}
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
 @media (max-width: 800px) {
     /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
@@ -190,7 +193,7 @@ header .closeBtn.active {
         width: 100%; 
         height: calc(100vh - 80px); 
         padding: 40px; 
-        border-top: 1px solid rgba(0,0,0,0.05); 
+        border-top: 1px solid rgba(24,137,224,0.05); 
     }
 
     /* Estilos para los enlaces de la navegación abierta en dispositivos móviles */
