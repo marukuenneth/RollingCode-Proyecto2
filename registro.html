@@ -19,14 +19,34 @@
 
     <body>
         <section  class = "form-register ">
-        
-
         <h4>REGISTRARSE </h4>
+        <label for="registrar">Me estoy registrando como: </label><br><br>
+        <select name="registrar" id="registrar">
+          <option value="registrar">Paciente</option>
+          <option value="registrar">Medico</option>
+          <option value="registrar">Administrador</option>
+        </select><br><br>
         <input  class = " controls " type = " text " name = " nombres " id = " nombres " placeholder = " Ingrese su Nombre " >
         <input  class = " controls " type = " text " name = " apellidos " id = " apellidos " placeholder = " Ingrese su Apellido " >
+        <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
+        <input  class = " controls " type = "date" name = " correo " id = " nacimiento " placeholder = " Fecha de nacimiento " >
+        <input  class = " controls " type = " text " name = " direccion " id = " direccion " placeholder = " Ingrese su Domicilio " >
+        <input  class = " controls " type = " text " name = " ocupacion " id = " ocupacion " placeholder = " ¿A qué se dedica?" >
+        <label for="registrar">Ingrese su obra social: </label><br><br>
+        <select name="obrasocial" id="obrasocial">
+          <option value="obrasocial">Boreal</option>
+          <option value="obrasocial">Prensa</option>
+          <option value="obrasocial">PAMI</option>
+          <option value="obrasocial">Swift Medical</option>
+          <option value="obrasocial">Subsidio de Salud</option>
+          <option value="obrasocial">No tengo obra social</option>
+        </select><br><br>
+        <input  class = " controls " type = " text " name = " matricula " id = " matricula " placeholder = " Ingrese su numero de matricula profesional " >
         <input  class = " controls " type = " email " name = " correo " id = " correo " placeholder = " Ingrese su Correo electrónico " >
         <input  class = " controls " type = " password " name = " correo " id = " correo " placeholder = " Ingrese su Contraseña " >
-        <P > Acepto y estoy de acuerdo con los<a  href = " https://umusic.digital/tini-myg-bog/l/trminos-y-condiciones " > Términos y Condiciones </a> </p>
+        <input  class = " controls " type = " password " name = " correo " id = " correo " placeholder = " Repita su Contraseña " >
+
+        <P > Acepto y estoy de acuerdo con los<a  href = "" > Términos y Condiciones </a> </p>
 
         <button type="button" class="botons" > <a  href = " ./index.html " >Registrarme</button> 
        

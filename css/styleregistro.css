@@ -5,10 +5,13 @@
   }
   
   body {
-      background: rgba(255, 192, 203, 0.76);
-   /* background-image:url(tini.jpg) ;
-    background-size: 100%;*/
-
+    /*Primera opción*/
+      background: #cbe0f6;
+   /*  Segunda opcioón */
+      /* background: #9ee2fa; */
+    justify-content: center;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .form-register {
@@ -18,9 +21,6 @@
     margin: auto;
     margin-top: 100px;
     border-radius: 4px;
-  
-
-
   }
   
   .form-register h4 {
@@ -61,7 +61,8 @@
   
   .form-register .botons {
     width: 100%;
-    background: pink;
+    /* background: rgb(17, 219, 255); */
+    background: #c7f5f5;
     text-align: center;
     text-decoration: none;
     border: none;
