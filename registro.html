@@ -1,59 +1,85 @@
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <!--Link icono tini-->
-    <link rel="shortcut icon" href="http://www.tinistoessel.com.mx/sites/default/files/favicon-96x96.png"
-      type="image/png">
-  
-    <!--Link Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  
-    
-    <!--Links CSS-->
-    <link rel="stylesheet" href="./CSS/styleregistro.css">
-    <title>TINI Stoessel Oficial | Registrarse</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Link icono tini-->
+  <link rel="shortcut icon" href="http://www.tinistoessel.com.mx/sites/default/files/favicon-96x96.png"
+    type="image/png">
+
+  <!--Link Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+  <!--Links CSS-->
+  <link rel="stylesheet" href="./CSS/styleregistro.css">
+  <title>TINI Stoessel Oficial | Registrarse</title>
 </head>
 
-    <body>
-        <section  class = "form-register ">
-        <h4>REGISTRARSE </h4>
-        <label for="registrar">Me estoy registrando como: </label><br><br>
-        <select name="registrar" id="registrar">
-          <option value="registrar">Paciente</option>
-          <option value="registrar">Medico</option>
-          <option value="registrar">Administrador</option>
-        </select><br><br>
-        <input  class = " controls " type = " text " name = " nombres " id = " nombres " placeholder = " Ingrese su Nombre " >
-        <input  class = " controls " type = " text " name = " apellidos " id = " apellidos " placeholder = " Ingrese su Apellido " >
-        <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
-        <input  class = " controls " type = "date" name = " correo " id = " nacimiento " placeholder = " Fecha de nacimiento " >
-        <input  class = " controls " type = " text " name = " direccion " id = " direccion " placeholder = " Ingrese su Domicilio " >
-        <input  class = " controls " type = " text " name = " ocupacion " id = " ocupacion " placeholder = " ¿A qué se dedica?" >
-        <label for="registrar">Ingrese su obra social: </label><br><br>
-        <select name="obrasocial" id="obrasocial">
-          <option value="obrasocial">Boreal</option>
-          <option value="obrasocial">Prensa</option>
-          <option value="obrasocial">PAMI</option>
-          <option value="obrasocial">Swift Medical</option>
-          <option value="obrasocial">Subsidio de Salud</option>
-          <option value="obrasocial">No tengo obra social</option>
-        </select><br><br>
-        <input  class = " controls " type = " text " name = " matricula " id = " matricula " placeholder = " Ingrese su numero de matricula profesional " >
-        <input  class = " controls " type = " email " name = " correo " id = " correo " placeholder = " Ingrese su Correo electrónico " >
-        <input  class = " controls " type = " password " name = " correo " id = " correo " placeholder = " Ingrese su Contraseña " >
-        <input  class = " controls " type = " password " name = " correo " id = " correo " placeholder = " Repita su Contraseña " >
+<body>
+  <section class="form-register ">
+    <h4>REGISTRARSE </h4>
+    <label for="registrar">Me estoy registrando como: </label><br><br>
+    <select name="registrar" id="registrar">
+      <option value="registrar">Paciente</option>
+      <option value="registrar">Medico</option>
+      <option value="registrar">Administrador</option>
+    </select><br><br>
+    <input class=" controls " type=" text " name=" nombres " id=" nombres " placeholder=" Ingrese su Nombre ">
+    <input class=" controls " type=" text " name=" apellidos " id=" apellidos " placeholder=" Ingrese su Apellido ">
+    <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
+    <input class=" controls " type="date" name=" correo " id=" nacimiento " placeholder=" Fecha de nacimiento ">
+    <input class=" controls " type=" text " name=" direccion " id=" direccion " placeholder=" Ingrese su Domicilio ">
+    <input class=" controls " type=" text " name=" ocupacion " id=" ocupacion " placeholder=" ¿A qué se dedica?">
+    <label for="registrar">Ingrese su obra social: </label><br><br>
+    <select name="obrasocial" id="obrasocial">
+      <option value="obrasocial">Boreal</option>
+      <option value="obrasocial">Prensa</option>
+      <option value="obrasocial">PAMI</option>
+      <option value="obrasocial">Swift Medical</option>
+      <option value="obrasocial">Subsidio de Salud</option>
+      <option value="obrasocial">No tengo obra social</option>
+    </select><br><br>
+    <input class=" controls " type=" text " name=" matricula " id=" matricula "
+      placeholder=" Ingrese su numero de matricula profesional ">
+    <label for="especialidad">Ingrese su especialidad: </label>
+    <select name="especialidad" id="especialidad" class="" aria-required="true" aria-invalid="false" aria-placeholder="Especialidad">
+      <option value="Clinica Médica">Clinica Médica</option>
+      <option value="Cardiología">Cardiología</option>
+      <option value="Cirugía General">Cirugía General</option>
+      <option value="Clinica Médica">Clinica Médica</option>
+      <option value="Densitometría">Densitometría</option>
+      <option value="Dermatología">Dermatología</option>
+      <option value="Diagnóstico por Imágenes">Diagnóstico por Imágenes</option>
+      <option value="Ecodopler">Ecodopler</option>
+      <option value="Ecografía">Ecografía</option>
+      <option value="Gastroenterología">Gastroenterología</option>
+      <option value="Ginecología">Ginecología</option>
+      <option value="Laboratorio de análisis clínicos">Laboratorio de análisis clínicos</option>
+      <option value="Mamografía Digital">Mamografía Digital</option>
+      <option value="Neurología">Neurología</option>
+      <option value="Oftalmología">Oftalmología</option>
+      <option value="Oncología">Oncología</option>
+      <option value="Ortopantomografía">Ortopantomografía</option>
+      <option value="Ortopedia">Ortopedia</option>
+      <option value="Otorrinolaringología">Otorrinolaringología</option>
+      <option value="Pediatría">Pediatría</option>
+      <option value="Resonancia Mangnética">Resonancia Mangnética</option>
+    </select><br><br>
+    <input class=" controls " type=" email " name=" correo " id=" correo "
+      placeholder=" Ingrese su Correo electrónico ">
+    <input class=" controls " type=" password " name=" correo " id=" correo " placeholder=" Ingrese su Contraseña ">
+    <input class=" controls " type=" password " name=" correo " id=" correo " placeholder=" Repita su Contraseña ">
 
-        <P > Acepto y estoy de acuerdo con los<a  href = "" > Términos y Condiciones </a> </p>
+    <P> Acepto y estoy de acuerdo con los<a href=""> Términos y Condiciones </a> </p>
 
-        <button type="button" class="botons" > <a  href = " ./index.html " >Registrarme</button> 
-       
-       
-        <p> <a  href = " ./index.html " > ¿Ya tengo Cuenta? </a >  </p > 
-     </section>
-    
-    </body>
+    <button type="button" class="botons"> <a href=" ./index.html ">Registrarme</button>
+
+
+    <p> <a href=" ./index.html "> ¿Ya tengo Cuenta? </a> </p>
+  </section>
+
+</body>
+
 </html>
-    
