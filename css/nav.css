@@ -15,26 +15,11 @@ header {
     background-color: #fff;
     padding: 20px 40px;
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center; 
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05); 
 }
 
-/* Estilo del logotipo en el encabezado */
-.logo {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.5em; 
-    font-weight: 700; 
-    text-transform: uppercase;
-    letter-spacing: 0.1em; 
-}
-
-/* Estilo del grupo de elementos en el encabezado */
-.group {
-    display: flex; 
-    align-items: center; 
-}
 
 /* Estilo de la lista de elementos en el encabezado */
 header ul {
@@ -79,9 +64,10 @@ header ul li a:hover::before {
 
 /* Estilo de la sección de búsqueda en el encabezado */
 header .search {
+    order: 2;
     position: relative; 
     display: flex; 
-    justify-content: start; 
+    justify-content: center; 
     align-items: center; 
     font-size: 1.5em; 
     z-index: 10; 
@@ -115,7 +101,7 @@ header .searchBox input {
     color: #333; 
     font-size: 1.25em; 
     background: #fff;
-    border-bottom: 1px solid rgba(24, 137, 224, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo del botón de búsqueda en el encabezado */
@@ -153,9 +139,6 @@ header .closeBtn.active {
     display: none;
 }
 
-.hide{
-    display: none;
-}
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
 @media (max-width: 800px) {
     /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
@@ -193,7 +176,7 @@ header .closeBtn.active {
         width: 100%; 
         height: calc(100vh - 80px); 
         padding: 40px; 
-        border-top: 1px solid rgba(24,137,224,0.05); 
+        border-top: 1px solid rgba(0,0,0,0.05); 
     }
 
     /* Estilos para los enlaces de la navegación abierta en dispositivos móviles */
@@ -206,4 +189,3 @@ header .closeBtn.active {
         display: none; 
     }
 }
-
