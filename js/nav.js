@@ -5,7 +5,7 @@ let searchBox = document.querySelector('.searchBox');
 
 let navigation = document.querySelector('.navigation'); 
 let menuToggle = document.querySelector('.menuToggle');
-let header = document.querySelector('header');
+let header = document.querySelector('.navbar');
 
 // Evento de clic para mostrar el cuadro de búsqueda
 searchBtn.onclick = function () {
