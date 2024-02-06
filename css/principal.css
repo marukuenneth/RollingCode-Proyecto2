@@ -1,11 +1,3 @@
-* {
-    justify-content: center;
-}
-
-body {
-    padding: auto 50px;
-}
-
 /* <!-- ***** ENCABEZADO *****--> */
 .encabezado {
     display: flex;

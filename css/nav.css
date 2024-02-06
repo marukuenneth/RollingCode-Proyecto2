@@ -1,13 +1,6 @@
-/* Estilo general del cuerpo de la página */
-body {
-    background-color: #dee1e2;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
 /* Estilo del encabezado de la página */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -18,6 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000; /* ajustar */
 }
 
 /* Estilo de la lista de elementos en el encabezado */
