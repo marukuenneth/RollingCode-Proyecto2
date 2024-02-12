@@ -38,6 +38,26 @@
     text-align: center;
 }
 
+.formularios_ingreso .contenedor_formularios .formulario .btn-tipo-ingreso .botn{
+    display: flexbox;
+    color: #127fdb;
+    margin-top: 20px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.activo, .botn:hover {
+    background: linear-gradient(to right, rgb(27, 98, 167), rgb(50, 156, 190));
+    color: #000 !important;
+    box-shadow: 0 0 16px 1px #127fdb;
+    border: 1px solid #000;
+    font-weight: bold;
+}
+    
 .cajas-entrada {
     position: relative;
     margin-top: 30px;
