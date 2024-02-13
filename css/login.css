@@ -1,0 +1,154 @@
+.contenedor_formularios {
+    position: absolute;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+
+.formularios_ingreso.show  .contenedor_formularios {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.form_close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #0b0217;
+    font-size: 15px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.contenedor_formularios h2 {
+    font-size: 22px;
+    color: #0b0217;
+    text-align: center;
+}
+
+.formularios_ingreso .contenedor_formularios .formulario .btn-tipo-ingreso .botn{
+    display: flexbox;
+    color: #127fdb;
+    padding: 5px 5px;
+    margin-top: 20px;
+    margin-left: 14px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.activo, .botn:hover {
+    background: linear-gradient(to right, rgb(27, 98, 167), rgb(50, 156, 190));
+    color: #fff !important;
+    box-shadow: 0 0 16px 1px #127fdb;
+    border: 1px solid #000;
+}
+    
+.cajas-entrada {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+}
+
+.cajas-entrada input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+}
+
+.cajas-entrada input:focus {
+    border-color: #127fdb;
+}
+
+.cajas-entrada i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.cajas-entrada i.email, .cajas-entrada i.password {
+    left: 0;
+    color: #707070;
+}
+
+.cajas-entrada input:focus ~ i.email,
+.cajas-entrada input:focus ~ i.password {
+    color: #127fdb;
+}
+
+.cajas-entrada i.pw_hide {
+    right: 0;
+    font-size: 18px;
+}
+
+.opciones {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor_formularios a {
+    color: #127fdb;
+    font-size: 12px;
+}
+
+.contenedor_formularios a:hover {
+    text-decoration: underline;
+
+}
+
+.checkbox {
+    display: flex;
+    column-gap: 8px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.checkbox input {
+    accent-color: #127fdb;
+}
+
+.checkbox label {
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+    color: #0b0217;
+}
+
+.contenedor_formularios .boton_ingresar {
+    background: linear-gradient(to right, rgb(27, 98, 167), rgb(50, 156, 190));
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.registrarse {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
