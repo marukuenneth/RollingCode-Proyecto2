@@ -41,8 +41,9 @@
 .formularios_ingreso .contenedor_formularios .formulario .btn-tipo-ingreso .botn{
     display: flexbox;
     color: #127fdb;
+    padding: 5px 5px;
     margin-top: 20px;
-    margin-left: 15px;
+    margin-left: 14px;
     border: none;
     border-radius: 5px;
     outline: none;
@@ -52,10 +53,9 @@
 
 .activo, .botn:hover {
     background: linear-gradient(to right, rgb(27, 98, 167), rgb(50, 156, 190));
-    color: #000 !important;
+    color: #fff !important;
     box-shadow: 0 0 16px 1px #127fdb;
     border: 1px solid #000;
-    font-weight: bold;
 }
     
 .cajas-entrada {
