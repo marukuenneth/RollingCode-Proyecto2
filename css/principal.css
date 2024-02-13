@@ -388,7 +388,7 @@
     background-color: #fff;
     flex-wrap: nowrap;
     height: 100%;
-    /* padding: 40vh; */
+    margin-bottom: 5rem;
 }
 .solicitar-turnos-texto{
     display: flex;
