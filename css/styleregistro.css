@@ -1,12 +1,12 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
   body {
     /*Primera opción*/
-      background: #cbe0f6;
+      background: rgb(148, 198, 255);;
    /*  Segunda opcioón */
       /* background: #9ee2fa; */
     justify-content: center;
@@ -15,11 +15,12 @@
   }
   
   .form-register {
-    width: 400px;
+    width: 70vw;
     background: #fcfcfc;
     padding: 30px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-radius: 4px;
   }
   
@@ -82,3 +83,52 @@
   .esconder{
     display: none;
   }
+
+  .divisiones{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+  .division1, .division2{
+    padding: 1rem;
+    width: 50%;
+  }
+
+  /* RESPONSIVE */
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .divisiones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .division1, .division2{
+    width: 100%;
+    padding: 0;
+  }
+  .form-register{
+    width: 80vw;
+    
+  }
+  .form-register h4{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .divisiones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .division1, .division2{
+    width: 100%;
+  }
+  
+}
