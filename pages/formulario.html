@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/formulario.css">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="title-formulario">
+        <!-- <h1>Title</h1> -->
+    </div>
+    <!-- ***** FORMULARIO ***** -->
+    <div class="formulario">
+        <h3>Turno</h3>
+        <form class="contact-form" method="POST" action="">
+            <div class="form-group">
+                <input type="text" id="fname" name="nombre" placeholder="Nombre*" maxlength="25" required
+                    aria-required="true">
+
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido*" maxlength="25" required
+                    aria-required="true">
+
+                <input type="email" id="email " name="email" placeholder="E-mail*" maxlength="25" required
+                    aria-required="true">
+
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono*" maxlength="15" required
+                    aria-required="true">
+            </div>
+
+
+            <div class="form-group">
+                <select name="especialidad" aria-required="true" aria-invalid="false" aria-placeholder="Especialidad"
+                    id="profesion">
+                    <option value="Clinica Médica">Clinica Médica</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Cirugía General">Cirugía General</option>
+                    <option value="Clinica Médica">Clinica Médica</option>
+                    <option value="Densitometría">Densitometría</option>
+                    <option value="Dermatología">Dermatología</option>
+                    <option value="Diagnóstico por Imágenes">Diagnóstico por Imágenes</option>
+                    <option value="Ecodopler">Ecodopler</option>
+                    <option value="Ecografía">Ecografía</option>
+                    <option value="Gastroenterología">Gastroenterología</option>
+                    <option value="Ginecología">Ginecología</option>
+                    <option value="Laboratorio de análisis clínicos">Laboratorio de análisis clínicos</option>
+                    <option value="Mamografía Digital">Mamografía Digital</option>
+                    <option value="Neurología">Neurología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                    <option value="Oncología">Oncología</option>
+                    <option value="Ortopantomografía">Ortopantomografía</option>
+                    <option value="Ortopedia">Ortopedia</option>
+                    <option value="Otorrinolaringología">Otorrinolaringología</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Resonancia Mangnética">Resonancia Mangnética</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="consulta">Motivo de la consulta</label><br>
+                <textarea id="consulta" name="consulta" rows="4" cols="20" maxlength="100" required></textarea><br><br>
+                <div class="btn-contenedor">
+                    <a><button type="submit" class="btn btn-primary" id="btn-solicitar"
+                            value="solicitar">Solicitar</button></a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
