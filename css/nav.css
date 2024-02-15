@@ -11,7 +11,8 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
-    z-index: 1000; /* ajustar */
+    z-index: 1000;
+    /* ajustar */
 }
 
 /* Estilo de la lista de elementos en el encabezado */
@@ -100,7 +101,8 @@
 /* Estilo del botón de búsqueda en el encabezado */
 .navbar .searchBtn {
     position: relative;
-    left: -20px; /* ajustar */
+    left: -20px;
+    /* ajustar */
     top: 2.5px;
     transition: 0.5s ease-in-out;
 }
@@ -161,7 +163,8 @@
     /* Estilos para la navegación abierta en dispositivos móviles */
     .navbar.open .navigation {
         position: absolute;
-        top: 88px; /* Ajustar */
+        top: 88px;
+        /* Ajustar */
         opacity: 1;
         visibility: visible;
         left: 0;

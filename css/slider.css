@@ -17,8 +17,19 @@ body {
     background: #efefef;
 }
 
+.contenedor {
+    width: 100%;
+}
+
+.contenedor-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .container {
-    max-width: 1500px; /* Ajustable */
+    max-width: 1500px;
+    /* Ajustable */
     width: 100%;
     padding: 40px 0;
 }
@@ -96,6 +107,7 @@ body {
     .swiper-navBtn {
         display: none;
     }
+
     .card .profile-details .name {
         font-size: 1rem;
     }
@@ -106,4 +118,3 @@ body {
         font-size: 1rem;
     }
 }
-

@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/rolling simbolo.png" type="image/png">
     <title>Rolling medical</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- BOOTSTRAP -->
+    <!-- ***** CSS ***** -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- ***** ICONOS ***** -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- ***** BOOTSTRAP ***** -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
@@ -39,16 +38,16 @@
             </div>
             <div>
                 <div>
-                    <a><button type="button" class="btn btn-primary" id="login_open">Ingresar</button></a>
+                    <a href="./pages/formulario.html"><button type="button" class="btn btn-primary" id="login_open">Ingresar</button></a>
                 </div>
             </div>
         </div>
 
-        <!-- ***** BARRA NAV *****-->
+        <!-- ***** NAV *****-->
         <nav class="navbar">
             <div class="group">
                 <ul class="navigation">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="/index.html">Inicio</a></li>
                     <li><a href="/pages/error-404.html">Institucion</a></li>
                     <li><a href="/pages/error-404.html">Servicios</a></li>
                     <li><a href="/pages/error-404.html">Contacto</a></li>
@@ -87,7 +86,7 @@
                         <button class="botn">Admin</button>
                     </div>
                     <form action="#">
-                        
+
                         <div class="cajas-entrada">
                             <input type="email" placeholder="Ingresa tu Correo" required>
                             <i class="uil uil-envelope-alt email"></i>
@@ -274,53 +273,6 @@
             <div>
                 <a href=""><button type="button" class="btn btn-primary">Continuar</button></a>
             </div>
-
-
-            <!-- ***** FORMULARIO ***** -->
-            <!-- <div class="formulario">
-                <form action="/action_page.php" method="post">
-                    <input type="text" id="fname" name="nombre" placeholder="Nombre*" maxlength="25" required
-                        aria-required="true"><br><br>
-
-                    <input type="text" id="Apellido" name="apellido" placeholder="Apellido*" maxlength="25" required
-                        aria-required="true"><br><br>
-
-                    <input type="email" id="email " name="email" placeholder="E-mail*" required
-                        aria-required="true"><br><br>
-
-                    <input type="tel" id="telefono" name="telefono" placeholder="Teléfono*" maxlength="15" required
-                        aria-required="true"><br><br>
-
-                    <select name="especialidad" class="" aria-required="true" aria-invalid="false"
-                        aria-placeholder="Especialidad">
-                        <option value="Clinica Médica">Clinica Médica</option>
-                        <option value="Cardiología">Cardiología</option>
-                        <option value="Cirugía General">Cirugía General</option>
-                        <option value="Clinica Médica">Clinica Médica</option>
-                        <option value="Densitometría">Densitometría</option>
-                        <option value="Dermatología">Dermatología</option>
-                        <option value="Diagnóstico por Imágenes">Diagnóstico por Imágenes</option>
-                        <option value="Ecodopler">Ecodopler</option>
-                        <option value="Ecografía">Ecografía</option>
-                        <option value="Gastroenterología">Gastroenterología</option>
-                        <option value="Ginecología">Ginecología</option>
-                        <option value="Laboratorio de análisis clínicos">Laboratorio de análisis clínicos</option>
-                        <option value="Mamografía Digital">Mamografía Digital</option>
-                        <option value="Neurología">Neurología</option>
-                        <option value="Oftalmología">Oftalmología</option>
-                        <option value="Oncología">Oncología</option>
-                        <option value="Ortopantomografía">Ortopantomografía</option>
-                        <option value="Ortopedia">Ortopedia</option>
-                        <option value="Otorrinolaringología">Otorrinolaringología</option>
-                        <option value="Pediatría">Pediatría</option>
-                        <option value="Resonancia Mangnética">Resonancia Mangnética</option>
-                    </select><br><br>
-                    <label for="consulta">Motivo de la consulta</label><br>
-                    <textarea id="consulta" name="consulta" rows="4" cols="20" maxlength="100"
-                        required></textarea><br><br>
-                    <input type="submit" value="Solicitar">
-                </form>
-            </div> -->
         </div>
 
     </main>
@@ -388,8 +340,6 @@
                 </ul>
             </article>
         </section>
-
-        <!--Copy-->
         <section class="pie-pagina">
             <article class="text-center">
                 <p>
@@ -406,22 +356,23 @@
     </footer>
 
 
-    <!-- ***** SCRIPTS ***** -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
-    <!-- JS -->
+    <!-- ***** JS ***** -->
     <script src="js/nav.js"></script>
     <script src="js/login.js"></script>
-    <!-- ICONOS -->
+    <!-- ***** ICONOS ***** -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- ***** SCRIPTS ***** -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>
