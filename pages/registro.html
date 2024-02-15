@@ -1,0 +1,98 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Link icono rolling medical-->
+  <link rel="shortcut icon" href="rolling simbolo.png"type="image/png">
+
+  <!--Link Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+  <!--Links CSS-->
+  <link rel="stylesheet" href="./CSS/styleregistro.css">
+  <title>Rolling Medical | Registrarse</title>
+</head>
+
+<body>
+  <form class="form-register ">
+    <h4>REGISTRARSE </h4>
+    <label for="registrar">Me estoy registrando como: </label><br>
+    <select class="botons" name="registrar" id="registrar" onchange="mostrar(this)">
+      <option value="">Seleccione una opcion</option>
+      <option value="paciente">Paciente</option>
+      <option value="medico">Medico</option>
+      <option value="0">Administrador</option>
+    </select><br><br>
+    <div class="divisiones">
+      <div class="division1">
+        <input class=" controls " type=" text " name=" nombres " id=" nombres " placeholder="Ingrese su Nombre">
+        <input class=" controls " type=" text " name=" apellidos " id=" apellidos " placeholder="Ingrese su Apellido">
+        <input class=" controls " type=" text " name=" direccion " id=" direccion " placeholder="Ingrese su Domicilio">
+        <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
+        <input class=" controls " type="date" name=" nacimiento " id=" nacimiento " placeholder="Fecha de nacimiento">
+      </div>
+      <div class="division2">
+        <div id="paciente" class="esconder">
+          <label for="registrar">Ingrese su obra social: </label><br>
+          <select class="botons" name="obrasocial" id="obrasocial">
+            <option value="">Seleccione una opcion</option>
+            <option value="obrasocial">Boreal</option>
+            <option value="obrasocial">Prensa</option>
+            <option value="obrasocial">PAMI</option>
+            <option value="obrasocial">Swift Medical</option>
+            <option value="obrasocial">Subsidio de Salud</option>
+            <option value="obrasocial">No tengo obra social</option>
+          </select>
+          <input class=" controls " type=" text " name=" ocupacion " id=" ocupacion " placeholder="¿A qué se dedica?">
+        </div>
+        <div id="medico" class="esconder">
+          <label for="especialidad">Ingrese su especialidad: </label>
+          <select class="botons" name="especialidad" id="especialidad" class="" aria-required="true" aria-invalid="false" aria-placeholder="Especialidad">
+            <option value="">Seleccione una opcion</option>
+            <option value="Clinica Médica">Clinica Médica</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Cirugía General">Cirugía General</option>
+            <option value="Clinica Médica">Clinica Médica</option>
+            <option value="Densitometría">Densitometría</option>
+            <option value="Dermatología">Dermatología</option>
+            <option value="Diagnóstico por Imágenes">Diagnóstico por Imágenes</option>
+            <option value="Ecodopler">Ecodopler</option>
+            <option value="Ecografía">Ecografía</option>
+            <option value="Gastroenterología">Gastroenterología</option>
+            <option value="Ginecología">Ginecología</option>
+            <option value="Laboratorio de análisis clínicos">Laboratorio de análisis clínicos</option>
+            <option value="Mamografía Digital">Mamografía Digital</option>
+            <option value="Neurología">Neurología</option>
+            <option value="Oftalmología">Oftalmología</option>
+            <option value="Oncología">Oncología</option>
+            <option value="Ortopantomografía">Ortopantomografía</option>
+            <option value="Ortopedia">Ortopedia</option>
+            <option value="Otorrinolaringología">Otorrinolaringología</option>
+            <option value="Pediatría">Pediatría</option>
+            <option value="Resonancia Mangnética">Resonancia Mangnética</option>
+          </select>
+          <input class=" controls " type=" text " name=" matricula " id=" matricula " placeholder="Ingrese su numero de matricula profesional">
+        </div>
+        <input class=" controls " type=" email " name=" correo " id=" correo "
+        placeholder="Ingrese su Correo electrónico">
+        <input class=" controls " type=" password " name=" correo " id=" correo " placeholder="Ingrese su Contraseña">
+        <input class=" controls " type=" password " name=" correo " id=" correo " placeholder="Repita su Contraseña">
+      </div>
+    </div>
+
+    <input class=" controls " type="checkbox" name=" acepto " id="acepto" value="acepto"><label for="acepto">Acepto y estoy de acuerdo con los<a href=""> Términos y Condiciones </a></label>
+
+
+    <button type="submit" class="botons"> <a href=" ./index.html ">Registrarme</button>
+
+
+    <p> <a href=" ./index.html "> ¿Ya tengo Cuenta? </a> </p>
+  </form>
+
+</body>
+
+<script src="/js/registro.js"></script>
+</html>
