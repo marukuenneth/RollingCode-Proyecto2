@@ -28,14 +28,14 @@ body {
 }
 
 .container {
-    max-width: 1500px;
-    /* Ajustable */
+    max-width: 1500px; /* Ajustable */
     width: 100%;
     padding: 40px 0;
 }
 
 .slide-container {
     margin: 0 30px;
+    margin-bottom: 35px;
     overflow: hidden;
 }
 
@@ -95,6 +95,10 @@ body {
 
 .swiper-pagination-bullet {
     background-color: #000;
+}
+
+#paginacion {
+    margin-top: 1rem;
 }
 
 @media (max-width: 1230px) {
