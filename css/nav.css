@@ -71,7 +71,9 @@
 /* Estilo del cuadro de búsqueda */
 .navbar .searchBox {
     position: absolute;
-    right: -100%;
+    /* right: -100%; problema con responsive */
+    /* opacity: 0; opcion 1 */
+    transform: translateX(+100%);
     width: 100%;
     height: 100%;
     display: flex;
@@ -83,7 +85,9 @@
 
 /* Estilo del cuadro de búsqueda activo */
 .navbar .searchBox.active {
-    right: 0;
+    /* right: 0; */
+     /* opacity: 2; opcion 1 */
+     transform: translateX(0%);
 }
 
 /* Estilo del campo de entrada en el cuadro de búsqueda */
@@ -135,7 +139,7 @@
 }
 
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
-@media (max-width: 800px) {
+@media (max-width: 1250px) {
 
     /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
     .navbar .searchBtn {
@@ -187,5 +191,10 @@
     /* Clase para ocultar elementos en dispositivos móviles */
     .hide {
         display: none;
+    }
+
+    /* agrego fix responsive para el acho de la barra de busqueda */
+    .navbar .searchBox {
+        padding: 0 65 px;
     }
 }
