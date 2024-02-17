@@ -137,7 +137,6 @@
 
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
 @media (max-width: 1250px) {
-
     .navbar ul {
         flex-direction: column;  /* fix responsive*/ 
     }
