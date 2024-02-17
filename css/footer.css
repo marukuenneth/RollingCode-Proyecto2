@@ -15,7 +15,7 @@ footer {
 }
 
 footer .p-4 {
-  margin-left: 1rem;
+  margin-left: 10rem;
 }
 
 
@@ -44,6 +44,12 @@ footer a {
   color: #ffffff;
 }
 
+footer a.textColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
 /* Estilos para los íconos de redes sociales */
 footer i {
   color: #ffffff;
@@ -52,4 +58,29 @@ footer i {
 /* Estilos para el texto de copyright */
 footer small {
   color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  footer .p-4 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  footer .fs {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px)  {
+  footer .p-4 {
+    margin-left: 1rem;
+    font-size: 14px;
+  }
+  
+}
+
+@media (min-width: 1201px) and (max-width: 1450px)  {
+  footer .p-4 {
+    margin-left: 4rem;
+  }
 }

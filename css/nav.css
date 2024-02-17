@@ -71,10 +71,10 @@
 /* Estilo del cuadro de búsqueda */
 .navbar .searchBox {
     position: absolute;
-    right: -100%;
+    transform: translateX(+100%);
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none; /* fix responsive*/ 
     background: #fff;
     align-items: center;
     padding: 0 30px;
@@ -83,7 +83,8 @@
 
 /* Estilo del cuadro de búsqueda activo */
 .navbar .searchBox.active {
-    right: 0;
+     display: flex;
+     transform: translateX(0%);
 }
 
 /* Estilo del campo de entrada en el cuadro de búsqueda */
@@ -135,12 +136,9 @@
 }
 
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
-@media (max-width: 800px) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+@media (max-width: 1250px) {
+    .navbar ul {
+        flex-direction: column;  /* fix responsive*/ 
     }
 
     /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
@@ -163,7 +161,7 @@
         position: absolute;
         opacity: 0;
         visibility: hidden;
-        left: 100%;
+        /* left: 100%; fix responsive*/ 
     }
 
     /* Estilos para la navegación abierta en dispositivos móviles */
@@ -194,66 +192,15 @@
     .hide {
         display: none;
     }
-}
 
-
-@media (max-width: 300px) {
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
+    /* agrego fix responsive para el acho de la barra de busqueda */
+    .navbar .searchBox {
+        padding: 0 65 px;
     }
 
-    /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
-    .navbar .searchBtn {
-        left: 0;
-    }
-
-    /* Estilos para el interruptor de menú en dispositivos móviles */
-    .navbar .menuToggle {
-        position: absolute;
-        display: block;
-        font-size: 2em;
-        cursor: pointer;
-        transform: translateX(30px);
-        z-index: 10;
-    }
-
-    /* Estilos para la navegación en dispositivos móviles */
-    .navbar .navigation {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        left: 100%;
-    }
-
-    /* Estilos para la navegación abierta en dispositivos móviles */
-    .navbar.open .navigation {
-        position: absolute;
-        top: 88px;
-        /* Ajustar */
-        opacity: 1;
-        visibility: visible;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        width: 100%;
-        padding: 40px;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-        height: auto;
-        max-height: calc(100vh - 88px);
-        overflow-y: auto;
-    }
-
-    /* Estilos para los enlaces de la navegación abierta en dispositivos móviles */
-    .navbar.open .navigation li a {
-        font-size: 1.2em;
-    }
-
-    /* Clase para ocultar elementos en dispositivos móviles */
-    .hide {
-        display: none;
+    .navbar .searchBox.active {
+        /* fix responsive*/ 
+        width: 90%;
+        margin-left: 40px;
     }
 }

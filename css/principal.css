@@ -290,8 +290,9 @@
     z-index: 1;
     padding: 0;
 }
+
 -----------------------------
-.extras1{
+.extras1 {
     height: 400px;
     width: 400px;
     flex-wrap: nowrap;
@@ -308,12 +309,14 @@
     align-items: start;
     padding: 30px;
 }
+
 .extras1 img {
     border-radius: 100%;
     height: 100px;
     width: 100px;
     object-fit: cover;
 }
+
 .extras1 h1 {
     font-size: 20px;
 }
@@ -331,8 +334,7 @@
 }
 
 ----------------------------------
-
-.extras2{
+.extras2 {
     background-color: #1773ff;
     display: flex;
     flex-direction: column;
@@ -390,6 +392,7 @@
     height: 100%;
     margin-bottom: 5rem;
 }
+
 .solicitar-turnos-texto{
     display: flex;
     flex-direction: column;
@@ -399,23 +402,26 @@
     width: 100%;
     padding: 3rem;
 }
+
 .solicitar-turnos-texto h2{
     color: #1773ff;
 }
 
+
+
 /* MEDIA QUERY - RESPONSIVE*/
 
 /* Media query para dispositivos móviles */
-@media (max-width: 767px){
-    .solicitar-turnos-texto{
-        padding:0;
-    }
-    .extras2-contenido{
-        font-size: 10px;
-        
-    }
-}
+
 @media (max-width: 767px) {
+    .solicitar-turnos-texto {
+        padding: 0;
+    }
+
+    .extras2-contenido {
+        font-size: 10px;
+
+    }
     .carousel-caption2 {
         display: flex;
         flex-wrap: wrap;
@@ -428,13 +434,17 @@
         width: 100%;
         height: 100%;
     }
+
     .ubicacion{
         display: none;
     }
+
     .texto-servicios{
         font-size: 5px;
+        margin-top: 90px;
     }
-    .extras,.extras-contenido{
+
+    .extras, .extras-contenido {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -445,22 +455,27 @@
         flex-wrap: nowrap;
         margin: 0;
     }
-    .extras-contenido-texto{
+
+    .extras-contenido-texto {
         height: 100%;
         width: 100%;
     }
-    .extras1{
+
+    .extras1 {
         height: 100%;
         width: 100%;
     }
-    .extras2{
+
+    .extras2 {
         padding-top: 3rem;
-        position:static;
+        position: static;
     }
-    .solicitar-turnos{
+
+    .solicitar-turnos {
         padding: 10vh;
     }
 }
+
 /* Media query para tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
 

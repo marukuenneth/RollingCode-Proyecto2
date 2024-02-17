@@ -66,7 +66,7 @@
             <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
 
             <div class="searchBox">
-                <input type="text" placeholder="Search here...">
+                <input type="text" placeholder="Busca aqui...">
             </div>
         </nav>
     </header>
@@ -80,19 +80,19 @@
                 <div class="formulario ingresar">
                     <h2>Inicia Sesion</h2>
 
-                    <div class="btn-tipo-ingreso" id="botones">
-                        <button class="botn activo">Paciente</button>
-                        <button class="botn">Doctor</button>
-                        <button class="botn">Admin</button>
+                    <div class="btn-tipo-ingreso form-group" id="botones">
+                        <button class="botn" data-rol="paciente">Paciente</button>
+                        <button class="botn activo" data-rol="doctor">Doctor</button>
+                        <button class="botn" data-rol="admin">Admin</button>
                     </div>
-                    <form action="#">
+                    <form action="#" id="loginForm">
 
-                        <div class="cajas-entrada">
-                            <input type="email" placeholder="Ingresa tu Correo" required>
+                        <div class="cajas-entrada form-group">
+                            <input type="text" id="nombreUsuario" placeholder="Ingrese su Nombre" required>
                             <i class="uil uil-envelope-alt email"></i>
                         </div>
-                        <div class="cajas-entrada">
-                            <input type="password" placeholder="Ingresa tu Contraseña" required>
+                        <div class="cajas-entrada form-group">
+                            <input type="password" id="contraseña" placeholder="Ingresa tu Contraseña" required>
                             <i class="uil uil-lock password"></i>
                             <i class="uil uil-eye-slash pw_hide"></i>
                         </div>
@@ -103,13 +103,14 @@
                             </span>
                             <a href="#" class="forgot_pw">Olvidaste tu contraseña?</a>
                         </div>
-                        <button class="boton_ingresar">Ingresar</button>
+                        <div id="mensajeError" class="mensaje-error oculto">Credenciales incorrectas. Por favor, inténtalo de nuevo</div>
+                        <button id="botonIniciar" class="bton btn-primary boton_ingresar">Ingresar</button>
                         <div class="registrarse">Aun no tienes cuenta? <a href="#" id="registrate">Registrate</a></div>
                     </form>
                 </div>
             </div>
         </div>
-
+        
         <div class="carousel">
             <!-- ***** CARRUSEL DE FOTOS *****-->
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -271,7 +272,7 @@
                     tener una cuenta propia, regístrese.</p>
             </div>
             <div>
-                <a href=""><button type="button" class="btn btn-primary">Continuar</button></a>
+                <a><button type="button" class="btn btn-primary" id="login_open2">Continuar</button></a>
             </div>
         </div>
 
@@ -300,16 +301,16 @@
                     </fieldset>
                 </form>
             </article>
-            <article class="my-5 my-md-0 col-12 col-md-4">
+            <article class="my-5 my-md-0 col-12 col-md-4 fs marginRight">
                 <ul class="ps-0 ps-lg-5 p-0 m-0">
                     <li class="">
                         <h5 class="mb-0">Turnos:</h5>
                         <a href="mailto:ventas@streetwear.com"
                             class="text-decoration-none text-black">turnos@rollingmedical.com</a>
                     </li>
-                    <li class="d-flex flex-column my-3">
+                    <li class="">
                         <h5 class="m-0">Atención al cliente:</h5>
-                        <a href="tel:3810000000" class="text-decoration-none text-black">3810000000</a>
+                        <a href="tel:3810000000" class="text-decoration-none text-black textColumn">3810000000</a>
                         <a href="mailto:ayuda@streetwear.com"
                             class="text-decoration-none text-black">ayuda@rollingmedical.com</a>
                     </li>
@@ -320,7 +321,7 @@
                     </li>
                 </ul>
             </article>
-            <article class="col-12 col-md-4">
+            <article class="col-12 col-md-4 fs">
                 <ul class="ps-0 ps-lg-5 p-0 m-0">
                     <li class="mb-1">
                         <a href="#" class="text-decoration-none text-black">Como agendar?</a>
