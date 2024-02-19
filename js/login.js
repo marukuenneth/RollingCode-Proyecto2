@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     case 'doctor':
                         window.location.href = "pages/paciente.html";
                         break;
-                    case 'admin':
+                    case '1':
                         window.location.href = "pages/admin.html";
                         break;
                     default:

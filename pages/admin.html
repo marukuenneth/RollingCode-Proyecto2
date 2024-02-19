@@ -14,7 +14,6 @@
 
 <body>
 
-    
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
             <div class="col-8 barra">
@@ -26,32 +25,81 @@
                 <ul class="navbar-nav mr-auto">
                     <li>
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
+
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir</a>
+                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                            </a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="barra-lateral col-12 col-sm-auto">
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>Médicos</span></a>
-                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Turnos</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Página principal</span></a>
-                    <a href="#" onclick="mostrarAnuncios()"><i class="fas fa-window-maximize"></i><span>Anuncio</span></a>
+                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>General</span></a>
+                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Pacientes</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Medicos</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Administradores</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Usuarios Aceptados</span></a>
+                    <a href="#" onclick="mostrarAnuncios()"><i
+                            class="fas fa-window-maximize"></i><span>Anuncio</span></a>
                 </nav>
             </div>
             <main class="main col">
-                <ul class="list-group list-group-horizontal" id="miLista">
-                    <!-- Aquí se mostrarán los elementos -->
-                </ul>
+                <div id="miLista">
+
+                </div>
+                <div class="aprobados" id="listaAprovados">
+
+                </div>
+                <!-- <ul class="list-group list-group-horizontal miLista">
+                    <li class="list-group-item">Nombre</li>
+                    <li class="list-group-item">Apellido</li>
+                    <li class="list-group-item">Contraseña</li>
+                    <li class="list-group-item">Correo Electronico</li>
+                    <li class="list-group-item">Rol</li>
+                    <li class="list-group-item">aceptar
+                    </li>
+
+                  </ul>
+                  <ul class="list-group list-group-horizontal-sm ocultarLI">
+                    <li class="list-group-item">Juan</li>
+                    <li class="list-group-item">Perez</li>
+                    <li class="list-group-item">callefalsa1234</li>
+                    <li class="list-group-item">jperez@rolling.com</li>
+                    <li class="list-group-item rol">Paciente</li>
+                  </ul>
+                  <ul class="list-group list-group-horizontal-md mostrarLI">
+                    <li class="list-group-item">Juan</li>
+                    <li class="list-group-item">Perez</li>
+                    <li class="list-group-item">callefalsa1234</li>
+                    <li class="list-group-item">jperez@rolling.com</li>
+                    <li class="list-group-item rol">Medico</li>
+                  </ul>
+                  <ul class="list-group list-group-horizontal-lg mostrarLI">
+                    <li class="list-group-item">Juan</li>
+                    <li class="list-group-item">Perez</li>
+                    <li class="list-group-item">callefalsa1234</li>
+                    <li class="list-group-item">jperez@rolling.com</li>
+                    <li class="list-group-item rol">Paciente</li>
+                  </ul>
+                  <ul class="list-group list-group-horizontal-xl mostrarLI">
+                    <li class="list-group-item">Juan</li>
+                    <li class="list-group-item">Perez</li>
+                    <li class="list-group-item">callefalsa1234</li>
+                    <li class="list-group-item">jperez@rolling.com</li>
+                    <li class="list-group-item rol">Admin</li>
+                  </ul> -->
                 <div class="row justify-content-center align-content-center text-center">
                     <div id="columna1" class="columna1 col-lg-6" style="display: none;">
-                        Médicos
-                        <div>(Cuadro de opciones)</div>
+                        Medicoss
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
                     </div>
                     <div id="columna2" class="columna2 col-lg-6" style="display: none;">
                         Turnos
@@ -63,14 +111,20 @@
                         </section>
                     </div>
                     <div id="columna3" class="columna3 col-lg-6" style="display: none;">
-                        Página Principal
-                        <div>(Cuadro de opciones)</div>
+                        Pagina Principal
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
                     </div>
                     <div id="columna4" class="columna4 col-lg-6" style="display: none;">
                         Anuncios
-                        <div>(Cuadro de opciones)</div>
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
                     </div>
+
                 </div>
+
             </main>
         </div>
     </div>

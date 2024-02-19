@@ -63,13 +63,13 @@ function updateUserList() {
 
         // Botón para volver a agregar al localStorage
         const buttonElement = document.createElement('button');
-        buttonElement.textContent = 'Reagregar';
+        buttonElement.textContent = 'Aceptar';
         buttonElement.addEventListener('click', function() {
             const usuariosAprobados = JSON.parse(localStorage.getItem('usuariosAprobados')) || [];
             usuariosAprobados.push(usuario);
             localStorage.setItem('usuariosAprobados', JSON.stringify(usuariosAprobados));
             updateUserList(); // Actualizar la lista después de agregar el usuario nuevamente
-            localStorage.removeItem('nuevoRegistro');
+            // localStorage.removeItem('nuevoRegistro'); <<<<<<- limpiar local storage
             location.reload();
         });
 
