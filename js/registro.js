@@ -25,12 +25,30 @@ let correo = document.getElementById('correo');
 let contraseña = document.getElementById('contraseña');
 let contraseña2 = document.getElementById('contraseña2');
 
+// document.querySelector('form').addEventListener('submit', e => {
+//     e.preventDefault();
+
+//     const data = Object.fromEntries(new FormData(e.target));
+//     alert(JSON.stringify(data));
+//     localStorage.setItem('nuevoRegistro', JSON.stringify(data));
+// })
 document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    alert(JSON.stringify(data));
-    localStorage.setItem('paciente', JSON.stringify(data));
+    const storage = JSON.parse(localStorage.getItem('nuevoRegistro'));
+    const array = [];
+    console.log(storage);
+    if (storage === null) {
+        array.push(data);
+        localStorage.setItem('nuevoRegistro', JSON.stringify(array));
+    }
+    else {
+        console.log(storage);
+        storage.push(data);
+        localStorage.setItem('nuevoRegistro', JSON.stringify(storage));
+    }
 })
+
 
 function mostrar(seleccionado) {
     if (seleccionado.value == "paciente") {
@@ -45,6 +63,8 @@ function mostrar(seleccionado) {
         // ----- agrego los atributos required en los select e inputs para paciente, porque se registrara un paciente
         document.getElementById("ocupacion").setAttribute("required", "");
         document.getElementById("obrasocial").setAttribute("required", "");
+        especialidad.value = '';
+        matricula.value = '';
 
 
 
@@ -62,7 +82,8 @@ function mostrar(seleccionado) {
             // ----- agrego los atributos required en los select e inputs para medico, porque se registrara un medico
             document.getElementById("especialidad").setAttribute("required", "");
             document.getElementById("matricula").setAttribute("required", "");
-
+            ocupacion.value = '';
+            obrasocial.value = '';
 
         } else {
             //escondo los div de paciente y medico porque no se usaran
@@ -78,6 +99,10 @@ function mostrar(seleccionado) {
             document.getElementById("matricula").setAttribute("disabled", "");
             document.getElementById("ocupacion").setAttribute("disabled", "");
             document.getElementById("especialidad").setAttribute("disabled", "");
+            especialidad.value = '';
+            matricula.value = '';
+            ocupacion.value = '';
+            obrasocial.value = '';
         }
     }
     tipoRegistro = seleccionado.value;
@@ -122,7 +147,7 @@ function validarApellido() {
 function validarTelefono() {
     const telefonoInput = document.getElementById('telefono');
     const telefonoValue = telefonoInput.value.trim();
-    
+
     // Expresión regular para validar caracteres alfabéticos
     const regexNumeros = /^\d{7,14}$/;
 
@@ -140,24 +165,37 @@ function validarNacimiento() {
     // Crear un objeto Date con la fecha de nacimiento ingresada
     var fecha = new Date(nacimientoValue);
     var fechaActual = new Date();
-    
+    var fechaVieja = new Date(1900,1,1)
+
     // Verificar si la fecha es válida
     if (isNaN(fecha.getTime())) {
         // Mostrar un mensaje de error si la fecha no es válida
         alert('Por favor, ingresa una fecha de nacimiento válida.');
         nacimientoValue.value = "";
     }
-    
+
     // Verificar si la fecha de nacimiento es mayor que la fecha actual
     if (fecha >= fechaActual) {
         alert('La fecha de nacimiento debe ser anterior a la fecha actual.');
         nacimientoValue.value = "";
     }
-    if (fecha <= 1900) {
+    if (fecha <= fechaVieja) {
         alert('Ingresa una fecha de nacimiento válida.');
         nacimientoValue.value = "";
     }
-    
+
+}
+function validarDireccion() {
+    const direccionInput = document.getElementById('direccion');
+    const direccionValue = direccionInput.value.trim();
+    // Expresión regular para validar caracteres alfabéticos
+    const regexdireccion = /^.{4,12}$/;
+    // Verificar si el valor del nombre coincide con la expresión regular
+    if (!regexdireccion.test(regexdireccion)) {
+        alert("Ingrese una direccion válida.");
+        // Limpiar el campo de nombre si se ingresaron caracteres no válidos
+        direccionInput.value = "";
+    }
 }
 function validarMatricula() {
     const matriculaInput = document.getElementById('matricula');
@@ -165,7 +203,7 @@ function validarMatricula() {
     // Expresión regular para validar caracteres alfabéticos
     const regexMatricula = /^.{4,12}$/;
     // Verificar si el valor del nombre coincide con la expresión regular
-    if (!regexSoloLetras.test(regexMatricula)) {
+    if (!regexMatricula.test(matriculaValue)) {
         alert("Ingrese una matricula válida.");
         // Limpiar el campo de nombre si se ingresaron caracteres no válidos
         matriculaInput.value = "";
@@ -180,7 +218,7 @@ function validarCorreo() {
     // Verificar si el correo electrónico cumple con la expresión regular
     if (!expresionRegularCorreo.test(correo)) {
         alert('Por favor, ingresa un correo electrónico válido.');
-        correoInput.value="";
+        correoInput.value = "";
     }
 }
 
@@ -188,30 +226,43 @@ const ocultarPassword = document.querySelectorAll(".pw_hide");
 ocultarPassword.forEach((icon) => {
     icon.addEventListener("click", () => {
         let getPWInput = icon.parentElement.querySelector("input");
-            if (getPWInput.type === "password") {
-                getPWInput.type = "text";
-                icon.classList.replace("uil-eye-slash", "uil-eye");
-            } else {
-                getPWInput.type = "password";
-                icon.classList.replace("uil-eye", "uil-eye-slash");
-            }
-        })
-    })
-
-    function validarContraseña() {
-        // Obtener el valor de la contraseña ingresada por el usuario
-        let contraseñaInput = document.getElementById('contraseña');
-        // Expresión regular para validar la contraseña
-        let expresionRegularContrasena = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
-        contraseñaInput.type="text";
-        
-        // Verificar si la contraseña cumple con la expresión regular
-        if (expresionRegularContrasena.test(contraseñaInput)) {
-          alert('La contraseña es válida.');
+        if (getPWInput.type === "password") {
+            getPWInput.type = "text";
+            icon.classList.replace("uil-eye-slash", "uil-eye");
         } else {
-          alert('La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.');
+            getPWInput.type = "password";
+            icon.classList.replace("uil-eye", "uil-eye-slash");
         }
-    }
-    function validarContraseña2() {
+    })
+})
 
+function validarContraseña() {
+    // Obtener el valor de la contraseña ingresada por el usuario
+    let contraseñaInput = document.getElementById('contraseña1').value;
+    // Expresión regular para validar la contraseña
+    let expresionRegularContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+    // contraseñaInput.type = "text";
+
+    // Verificar si la contraseña cumple con la expresión regular
+    if (expresionRegularContrasena.test(contraseñaInput)) {
+        alert('La contraseña es válida.');
+    } else {
+        alert('La contraseña debe tener al menos 8 caracteres, incluyendo al menos una letra mayúscula, una letra minúscula, un número y un carácter especial.');
     }
+
+}
+function validarContraseña2() {
+
+
+    const password = document.getElementById('contraseña1').value.trim();
+    const password2 = document.getElementById('contraseña2').value.trim();
+    let expresionRegularContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
+
+    if (!expresionRegularContrasena.test(password2)||password !== password2 || password2 === '') {
+        alert("las contraseñas no coinciden");
+    } else {
+        alert("las contraseñas coinciden");
+    }
+
+}
+
