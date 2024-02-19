@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
     const formOpenBtn = document.querySelector("#login_open");
     const formOpenBtn2 = document.querySelector("#login_open2");
     const formulariosIngreso = document.querySelector(".formularios_ingreso");
@@ -26,9 +27,10 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
-    botonesRol.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            botonesRol.forEach(function(btn) {
+
+    botonesRol.forEach(function (boton) {
+        boton.addEventListener('click', function () {
+            botonesRol.forEach(function (btn) {
                 btn.classList.remove('activo');
             });
             boton.classList.add('activo');
@@ -36,59 +38,71 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     class Usuario {
-        constructor(nombre, password, rol) {
+        constructor(nombre, contraseña1, registrar) {
             this.nombre = nombre;
-            this.password = password;
-            this.rol = rol;
+            this.contraseña1 = contraseña1;
+            this.registrar = registrar;
         }
     }
 
-    const usuario1 = new Usuario('eric', 'eric', 'paciente');
-    const usuario2 = new Usuario('pipo', 'pipo', 'admin');
-    const baseDatosUsuarios = [usuario1, usuario2];
+    function crearUsuariosDesdeLocalStorage() {
+        const usuariosAprobadosJSON = localStorage.getItem('usuariosAprobados');
+        if (usuariosAprobadosJSON) {
+            const usuariosAprobados = JSON.parse(usuariosAprobadosJSON);
+            usuariosAprobados.forEach(usuario => {
+                const usuarioInstancia = new Usuario(usuario.nombre, usuario.contraseña1, usuario.registrar);
+                baseDatosUsuarios.push(usuarioInstancia);
+            });
+        }
+    }
 
-    formulario.addEventListener('submit', function(event) {
+    const baseDatosUsuarios = [];
+
+    crearUsuariosDesdeLocalStorage();
+    console.log(baseDatosUsuarios)
+
+    formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
         const contraseñaIngresada = document.getElementById('contraseña').value;
         const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
 
-        let usuarioValido = baseDatosUsuarios.find(usuario => 
-            usuario.nombre === nombreUsuarioIngresado && 
-            usuario.password === contraseñaIngresada && 
-            usuario.rol === rolSeleccionado);
 
-            if (usuarioValido) {
-                console.log('OK');
-            
-                switch (rolSeleccionado) {
-                    case 'paciente':
-                        window.location.href = "pages/paciente.html";
-                        break;
-                    case 'doctor':
-                        window.location.href = "welcome_doctor.html";
-                        break;
-                    case 'admin':
-                        window.location.href = "welcome_admin.html";
-                        break;
-                    default:
-                        mostrarError();
-                        break;
-                }
-            
-                localStorage.setItem('auth', true);
-            } else {
-                console.log('FAIL');
-                mostrarError();
+        let usuarioValido = baseDatosUsuarios.find(usuario =>
+            usuario.nombre === nombreUsuarioIngresado &&
+            usuario.contraseña1 === contraseñaIngresada &&
+            usuario.registrar === rolSeleccionado);
+
+        if (usuarioValido) {
+            console.log('OK');
+
+            switch (rolSeleccionado) {
+                case 'paciente':
+                    window.location.href = "pages/paciente.html";
+                    break;
+                case 'doctor':
+                    window.location.href = "pages/paciente.html";
+                    break;
+                case 'administrador':
+                    window.location.href = "pages/admin.html";
+                    break;
+                default:
+                    mostrarError();
+                    break;
             }
-            
-            function mostrarError() {
-                const mensajeError = document.getElementById('mensajeError');
-                if (mensajeError) {
-                    mensajeError.style.display = 'block';
-                }
+
+            localStorage.setItem('auth', true);
+        } else {
+            console.log('FAIL');
+            mostrarError();
+        }
+
+        function mostrarError() {
+            const mensajeError = document.getElementById('mensajeError');
+            if (mensajeError) {
+                mensajeError.style.display = 'block';
             }
-            
+        }
     });
 });
