@@ -124,29 +124,8 @@
     <!-- ***** JS ***** -->
     <script src="/js/nav.js"></script>
     <script src="/js/login.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('.contact-form');
+    <script src="/js/form.js"></script>
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar que el formulario se envíe normalmente
-
-            const formData = new FormData(this);
-
-            // Convertir los datos del formulario en un objeto
-            const formDataObject = {};
-            formData.forEach((value, key) => {
-                formDataObject[key] = value;
-            });
-
-            // Guardar los datos en el almacenamiento local
-            localStorage.setItem('formularioData', JSON.stringify(formDataObject));
-
-            // Redireccionar a la página paciente.html
-            window.location.href = '/pages/paciente.html';
-        });
-    });
-    </script>
     <!-- ***** ICONOS ***** -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

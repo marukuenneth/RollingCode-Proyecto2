@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -67,31 +67,55 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
-                    <button type="button" class="boton-avatar">
+                    <img id="avatar-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
+                    <input type="file" id="input-avatar" accept="image/*" style="display: none;">
+                    <label for="input-avatar" class="boton-avatar">
                         <i class="far fa-image"></i>
-                    </button>
+                    </label>
                 </div>
+                <!-- Botón para seleccionar color de fondo -->
+                <button id="seleccionarColor" class="boton-color">Fondo</button>
             </div>
         </div>
+
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Juan Carlos Gimenez</h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="titulo">Biografía</h3>
+                <textarea id="bio" class="form-control" rows="4"
+                    placeholder="Agrega una descripción breve acerca de ti.."></textarea>
             </div>
+
             <div class="perfil-usuario-datos">
-                <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Dirección:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Teléfono:</li>
-                    <li><i class="icono fas fa-briefcase"></i> Ocupación:</li>
+                <h3 class="titulo">Información</h3>
+                <ul class="lista-datos" id="lista-datos-original">
+                    <li><i class="icono fas fa-map-signs"></i> Dirección: <span id="direccion">Calle 123, Ciudad</span>
+                    </li>
+                    <li><i class="icono fas fa-phone-alt"></i> Teléfono: <span id="telefono">123-456-7890</span></li>
+                    <li><i class="icono fas fa-briefcase"></i> Ocupación: <span id="ocupacion">Empleado</span></li>
+
+                    <li><i class="icono fas fa-user-check"></i> Registro: <span id="registro">Completo</span></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Nacimiento: <span id="nacimiento">14/14/1998</span>
+                    </li>
+                    <li><i class="icono fas fa-building"></i> Obra social: <span id="obraSocial">Subsidio</span></li>
                 </ul>
-                <ul class="lista-datos">
-                    <li><i class="icono fas fa-user-check"></i> Registro:</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Nacimiento:</li>
-                    <li><i class="icono fas fa-building"></i> Obra social:</li>
+                <ul class="lista-datos" id="lista-datos-editable" style="display: none;">
+                    <li><i class="icono fas fa-map-signs"></i> Dirección: <input type="text" id="input-direccion"></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Teléfono: <input type="text" id="input-telefono"></li>
+                    <li><i class="icono fas fa-briefcase"></i> Ocupación: <input type="text" id="input-ocupacion"></li>
+
+                    <li><i class="icono fas fa-user-check"></i> Registro: <input type="text" id="input-registro"></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Nacimiento: <input type="date" id="input-nacimiento">
+                    </li>
+                    <li><i class="icono fas fa-building"></i> Obra social: <input type="text" id="input-obraSocial">
+                    </li>
                 </ul>
+                <div class="contenedor-btn">
+                    <button id="editarDatos" class="btn btn-primary">Editar</button>
+                    <button id="guardarCambios" class="btn btn-success">Guardar</button>
+
+                </div>
             </div>
+
             <div class="perfil-usuario-history">
                 <h3 class="titulo">Turnos</h3>
                 <!-- Mensaje de "No solicito turno" -->
@@ -131,129 +155,14 @@
         </div>
 
         <div class="boton-regresar"
-            style="margin-top: 4.25rem; display: flex; justify-content: flex-start; width: 90%;">
+            style="margin-top: 4.25rem; margin-bottom: 2.25rem; display: flex; justify-content: flex-start; width: 90%;">
             <a href="/index.html"><button type="button" class="btn btn-primary">Regresar</button></a>
         </div>
     </section>
     <!-- ***** JS ***** -->
     <script src="/js/nav.js"></script>
     <script src="/js/login.js"></script>
-    <script>
-        // Obtener el elemento del resumen del turno
-        document.addEventListener('DOMContentLoaded', function () {
-            const resumenTurno = document.getElementById('resumen-turno');
-            const fechaActual = new Date().toLocaleDateString();
-
-            // Obtener los datos del formulario guardados en el almacenamiento local
-            const formDataString = localStorage.getItem('formularioData');
-            if (formDataString) {
-                const formData = JSON.parse(formDataString);
-
-                // Mostrar la fecha del turno
-                document.getElementById('fecha-turno-resumen').textContent = fechaActual;
-
-                // Mostrar la especialidad del turno
-                document.getElementById('especialidad-turno-resumen').textContent = formData['especialidad'];
-            }
-        });
-
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const formDataString = localStorage.getItem('formularioData');
-            if (formDataString) {
-                const formData = JSON.parse(formDataString);
-                const formDataBody = document.getElementById('turnos');
-
-                for (const key in formData) {
-                    if (formData.hasOwnProperty(key)) {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `<td>${key}</td><td>${formData[key]}</td>`;
-                        formDataBody.appendChild(row);
-                    }
-                }
-            }
-
-            // Obtener el modal
-            const modal = document.getElementById("detalleTurno");
-
-            // Obtener el botón que abre el modal
-            const btnAbrirModal = document.getElementById("verDetalle");
-
-            // Obtener el elemento <span> que cierra el modal
-            const spanCerrarModal = document.getElementsByClassName("close")[0];
-
-            // Cuando el usuario haga clic en el botón, abrir el modal
-            btnAbrirModal.onclick = function () {
-                modal.style.display = "block";
-            }
-
-            // Cuando el usuario haga clic en <span> (x), cerrar el modal
-            spanCerrarModal.onclick = function () {
-                modal.style.display = "none";
-            }
-
-            // Cuando el usuario haga clic fuera del modal, cerrarlo
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Obtener el botón para eliminar los datos del formulario
-            const btnEliminarDatos = document.getElementById('eliminarDatos');
-
-            // Manejar el evento click del botón para eliminar los datos
-            btnEliminarDatos.addEventListener('click', function () {
-                // Eliminar los datos del formulario del almacenamiento local
-                localStorage.removeItem('formularioData');
-
-                // Ocultar el contenedor de turnos solicitados
-                const contenedorTurnos = document.getElementById('perfil-usuario-history');
-                contenedorTurnos.style.display = 'none';
-
-                // Mostrar el mensaje de "No ha solicitado ningún turno"
-                const mensajeNoTurno = document.getElementById('mensaje-no-turno');
-                mensajeNoTurno.style.display = 'block';
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Obtener el botón para eliminar los datos del formulario
-            const btnEliminarDatos = document.getElementById('eliminarDatos');
-
-            // Obtener el contenedor de turnos solicitados y el mensaje de "No ha solicitado turno"
-            const contenedorTurnos = document.getElementById('perfil-usuario-history');
-            const mensajeNoTurno = document.getElementById('mensaje-no-turno');
-
-            // Manejar el evento click del botón para eliminar los datos
-            btnEliminarDatos.addEventListener('click', function () {
-                // Eliminar los datos del formulario del almacenamiento local
-                localStorage.removeItem('formularioData');
-
-                // Ocultar el contenedor de turnos solicitados
-                contenedorTurnos.style.display = 'none';
-
-                // Mostrar el mensaje de "No ha solicitado ningún turno"
-                mensajeNoTurno.style.display = 'block';
-            });
-
-            // Obtener el formulario guardado en el almacenamiento local
-            const formDataString = localStorage.getItem('formularioData');
-            if (formDataString) {
-                // Si hay datos en el formulario, mostrar el contenedor de turnos solicitados y ocultar el mensaje
-                contenedorTurnos.style.display = 'block';
-                mensajeNoTurno.style.display = 'none';
-            } else {
-                // Si no hay datos en el formulario, mostrar el mensaje y ocultar el contenedor de turnos solicitados
-                contenedorTurnos.style.display = 'none';
-                mensajeNoTurno.style.display = 'block';
-            }
-        });
-
-    </script>
+    <script src="/js/paciente.js"></script>
 
     <!-- ***** ICONOS ***** -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

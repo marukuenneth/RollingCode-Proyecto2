@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const formOpenBtn = document.querySelector("#login_open");
     const formOpenBtn2 = document.querySelector("#login_open2");
     const formulariosIngreso = document.querySelector(".formularios_ingreso");
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     })
+
 
     botonesRol.forEach(function (boton) {
         boton.addEventListener('click', function () {
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const contraseñaIngresada = document.getElementById('contraseña').value;
         const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
 
+
         let usuarioValido = baseDatosUsuarios.find(usuario =>
             usuario.nombre === nombreUsuarioIngresado &&
             usuario.contraseña1 === contraseñaIngresada &&
@@ -101,6 +104,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 mensajeError.style.display = 'block';
             }
         }
-
     });
 });
