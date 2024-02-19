@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bokor&display=swap");
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Roboto", sans-serif;
+  flex-grow: 1;
+  background-color: #7c7c7c;
+  color: #ffffff;
+  margin-top: 5rem;
+  padding: 3rem 2rem 0;
+  min-height: 35vh;
+}
+
+footer .p-4 {
+  margin-left: 10rem;
+}
+
+
+
+footer legend {
+  display: flex;
+  justify-content: center;
+}
+
+footer .a-logo {
+  margin-bottom: 2rem;
+}
+
+footer .logo-footer {
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilos para el formulario dentro del footer */
+footer form {
+  margin: 1rem;
+}
+
+/* Estilos para los enlaces del footer */
+footer a {
+  color: #ffffff;
+}
+
+footer a.textColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Estilos para los íconos de redes sociales */
+footer i {
+  color: #ffffff;
+}
+
+/* Estilos para el texto de copyright */
+footer small {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  footer .p-4 {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  footer .fs {
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px)  {
+  footer .p-4 {
+    margin-left: 1rem;
+    font-size: 14px;
+  }
+  
+}
+
+@media (min-width: 1201px) and (max-width: 1450px)  {
+  footer .p-4 {
+    margin-left: 4rem;
+  }
+}

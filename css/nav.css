@@ -1,206 +1,206 @@
-/* Estilo general del cuerpo de la página */
-body {
-    background-color: #dee1e2; 
-    min-height: 100vh; 
-    overflow-x: hidden; 
-}
-
 /* Estilo del encabezado de la página */
-header {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 88px;
     background-color: #fff;
     padding: 20px 40px;
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05); 
-}
-
-/* Estilo del logotipo en el encabezado */
-.logo {
-    color: #333;
-    text-decoration: none;
-    font-size: 1.5em; 
-    font-weight: 700; 
-    text-transform: uppercase;
-    letter-spacing: 0.1em; 
-}
-
-/* Estilo del grupo de elementos en el encabezado */
-.group {
-    display: flex; 
-    align-items: center; 
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    /* ajustar */
 }
 
 /* Estilo de la lista de elementos en el encabezado */
-header ul {
+.navbar ul {
     position: relative;
-    display: flex; 
-    gap: 30px; 
+    display: flex;
+    gap: 30px;
 }
 
 /* Estilo de cada elemento de la lista en el encabezado */
-header ul li {
+.navbar ul li {
     list-style: none;
 }
 
 /* Estilo del enlace en cada elemento de la lista en el encabezado */
-header ul li a {
-    position: relative; 
-    text-decoration: none; 
-    font-size: 1em; 
-    color: #333; 
-    text-transform: uppercase; 
-    letter-spacing: 0.2em; 
+.navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
 }
 
 /* Estilo del efecto antes del enlace en hover */
-header ul li a::before {
-    content: ''; 
-    position: absolute; 
-    bottom: -2px; 
-    width: 100%; 
-    height: 2px; 
-    background: #333; 
-    transform: scaleX(0); 
-    transition: transform 0.5s ease-in-out; 
+.navbar ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
     transform-origin: right;
 }
 
 /* Estilo del efecto antes del enlace en hover */
-header ul li a:hover::before {
-    transform: scaleX(1); 
-    transform-origin: left; 
+.navbar ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Estilo de la sección de búsqueda en el encabezado */
-header .search {
-    position: relative; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    font-size: 1.5em; 
-    z-index: 10; 
-    cursor: pointer; 
+.navbar .search {
+    order: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 10;
+    cursor: pointer;
 }
 
 /* Estilo del cuadro de búsqueda */
-header .searchBox {
-    position: absolute; 
-    right: -100%; 
-    width: 100%; 
-    height: 100%; 
-    display: flex; 
-    background: #fff; 
-    align-items: center; 
-    padding: 0 30px; 
-    transition: 0.5s ease-in-out; 
+.navbar .searchBox {
+    position: absolute;
+    transform: translateX(+100%);
+    width: 100%;
+    height: 100%;
+    display: none; /* fix responsive*/ 
+    background: #fff;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.5s ease-in-out;
 }
 
 /* Estilo del cuadro de búsqueda activo */
-header .searchBox.active {
-    right: 0;
+.navbar .searchBox.active {
+     display: flex;
+     transform: translateX(0%);
 }
 
 /* Estilo del campo de entrada en el cuadro de búsqueda */
-header .searchBox input {
-    width: 100%; 
-    border: none; 
-    outline: none; 
-    height: 50px; 
-    color: #333; 
-    font-size: 1.25em; 
+.navbar .searchBox input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: #333;
+    font-size: 1.25em;
     background: #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo del botón de búsqueda en el encabezado */
-header .searchBtn {
-    position: relative; 
-    left: 30px; 
+.navbar .searchBtn {
+    position: relative;
+    left: -20px;
+    /* ajustar */
     top: 2.5px;
-    transition: 0.5s ease-in-out; 
+    transition: 0.5s ease-in-out;
 }
 
 /* Estilo del botón de búsqueda activo */
-header .searchBtn.active {
-    left: 0; 
+.navbar .searchBtn.active {
+    left: 0;
 }
 
 /* Estilo del botón de cerrar el cuadro de búsqueda */
-header .closeBtn {
-    opacity: 0; 
-    visibility: hidden; 
-    transition: 0.5s; 
-    scale: 0; 
+.navbar .closeBtn {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    scale: 0;
 }
 
 /* Estilo del botón de cerrar activo en el cuadro de búsqueda */
-header .closeBtn.active {
-    opacity: 1; 
-    visibility: visible; 
-    transition: 0.5s; 
-    scale: 1; 
+.navbar .closeBtn.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
 }
 
 /* Estilo del interruptor de menú para dispositivos móviles */
-.menuToggle {
-    position: relative; 
+.navbar .menuToggle {
+    position: relative;
     display: none;
 }
 
 /* Estilos responsivos para pantallas con un ancho máximo de 800px */
-@media (max-width: 800px) {
+@media (max-width: 1250px) {
+    .navbar ul {
+        flex-direction: column;  /* fix responsive*/ 
+    }
+
     /* Ajuste de posición del botón de búsqueda en dispositivos móviles */
-    header .searchBtn {
-        left: 0; 
+    .navbar .searchBtn {
+        left: 0;
     }
 
     /* Estilos para el interruptor de menú en dispositivos móviles */
-    header .menuToggle {
-        position: absolute; 
-        display: block; 
-        font-size: 2em; 
+    .navbar .menuToggle {
+        position: absolute;
+        display: block;
+        font-size: 2em;
         cursor: pointer;
         transform: translateX(30px);
-        z-index: 10; 
+        z-index: 10;
     }
 
     /* Estilos para la navegación en dispositivos móviles */
-    header .navigation {
-        position: absolute; 
-        opacity: 0; 
-        visibility: hidden; 
-        left: 100%; 
+    .navbar .navigation {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        /* left: 100%; fix responsive*/ 
     }
 
     /* Estilos para la navegación abierta en dispositivos móviles */
-    header.open .navigation {
-        top: 80px; 
-        opacity: 1; 
-        visibility: visible; 
-        left: 0; 
-        display: flex; 
-        flex-direction: column; 
-        background: #fff; 
-        width: 100%; 
-        height: calc(100vh - 80px); 
-        padding: 40px; 
-        border-top: 1px solid rgba(0,0,0,0.05); 
+    .navbar.open .navigation {
+        position: absolute;
+        top: 88px;
+        /* Ajustar */
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        width: 100%;
+        padding: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        height: auto;
+        max-height: calc(100vh - 88px);
+        overflow-y: auto;
     }
 
     /* Estilos para los enlaces de la navegación abierta en dispositivos móviles */
-    header.open .navigation li a {
+    .navbar.open .navigation li a {
         font-size: 1.2em;
     }
 
     /* Clase para ocultar elementos en dispositivos móviles */
     .hide {
-        display: none; 
+        display: none;
+    }
+
+    /* agrego fix responsive para el acho de la barra de busqueda */
+    .navbar .searchBox {
+        padding: 0 65 px;
+    }
+
+    .navbar .searchBox.active {
+        /* fix responsive*/ 
+        width: 90%;
+        margin-left: 40px;
     }
 }
-

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-content-center">
+            <div class="col-8 barra">
+                <h4 class="text-light">
+                    <img src="/assets/rolling medical (1).png" alt="logo de rolling medical" class="logo">
+                </h4>
+            </div>
+            <div class="col-4 barra text-right">
+                <ul class="navbar-nav mr-auto">
+                    <li>
+                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="barra-lateral col-12 col-sm-auto">
+                <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
+                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>General</span></a>
+                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Pacientes</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Medicos</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Administradores</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Usuarios Aceptados</span></a>
+                    <a href="#" onclick="mostrarAnuncios()"><i
+                            class="fas fa-window-maximize"></i><span>Anuncio</span></a>
+                </nav>
+            </div>
+            <main class="main col">
+                <!-- Aqui se agregaran los usuarios Pendientes del local storage -->
+                <div id="miLista">
+                </div>
+                <!-- Aqui se agregaran los usuarios Aprobados del local storage -->
+                <div class="aprobados" id="listaAprobados">
+                </div>
+
+                <div class="row justify-content-center align-content-center text-center">
+                    <div id="columna1" class="columna1 col-lg-6" style="display: none;">
+                        Medicoss
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
+                    </div>
+                    <div id="columna2" class="columna2 col-lg-6" style="display: none;">
+                        Turnos
+                        <section id="userList">
+                            <h2>Pending Users</h2>
+                            <ul id="users">
+                                <!-- Pending user list will be displayed here -->
+                            </ul>
+                        </section>
+                    </div>
+                    <div id="columna3" class="columna3 col-lg-6" style="display: none;">
+                        Pagina Principal
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
+                    </div>
+                    <div id="columna4" class="columna4 col-lg-6" style="display: none;">
+                        Anuncios
+                        <div>
+                            (Cuadro de opciones)
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap-->
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/646c794df3.js"></script>
+    <!-- Iconos -->
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>
