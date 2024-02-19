@@ -35,82 +35,93 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    class Usuario {
-        constructor(nombre, password, rol) {
-            this.nombre = nombre;
-            this.password = password;
-            this.rol = rol;
-        }
-    }
+    // class Usuario {
+    //     constructor(nombre, password, rol) {
+    //         this.nombre = nombre;
+    //         this.password = password;
+    //         this.rol = rol;
+    //     }
+    // }
 
-    const usuario1 = new Usuario('eric', 'eric', 'paciente');
-    const usuario2 = new Usuario('pipo', 'pipo', 'admin');
-    const baseDatosUsuarios = [usuario1, usuario2];
+    // const usuario1 = new Usuario('eric', 'eric', 'paciente');
+    // const usuario2 = new Usuario('pipo', 'pipo', 'admin');
+    // const baseDatosUsuarios = [usuario1, usuario2];
 
-    formulario.addEventListener('submit', function(event) {
+    // formulario.addEventListener('submit', function(event) {
+    //     event.preventDefault();
+
+    //     const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
+    //     const contraseñaIngresada = document.getElementById('contraseña').value;
+    //     const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
+
+    //     let usuarioValido = baseDatosUsuarios.find(usuario => 
+    //         usuario.nombre === nombreUsuarioIngresado && 
+    //         usuario.password === contraseñaIngresada && 
+    //         usuario.rol === rolSeleccionado);
+
+    //         if (usuarioValido) {
+    //             console.log('OK');
+            
+    //             switch (rolSeleccionado) {
+    //                 case 'paciente':
+    //                     window.location.href = "pages/paciente.html";
+    //                     break;
+    //                 case 'doctor':
+    //                     window.location.href = "welcome_doctor.html";
+    //                     break;
+    //                 case 'admin':
+    //                     window.location.href = "welcome_admin.html";
+    //                     break;
+    //                 default:
+    //                     mostrarError();
+    //                     break;
+    //             }
+            
+    //             localStorage.setItem('auth', true);
+    //         } else {
+    //             console.log('FAIL');
+    //             mostrarError();
+    //         }
+            
+    //         function mostrarError() {
+    //             const mensajeError = document.getElementById('mensajeError');
+    //             if (mensajeError) {
+    //                 mensajeError.style.display = 'block';
+    //             }
+    //         }
+            
+    // });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
-
+    
         const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
         const contraseñaIngresada = document.getElementById('contraseña').value;
-        const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
-
-        let usuarioValido = baseDatosUsuarios.find(usuario => 
-            usuario.nombre === nombreUsuarioIngresado && 
-            usuario.password === contraseñaIngresada && 
-            usuario.rol === rolSeleccionado);
-
-            if (usuarioValido) {
-                console.log('OK');
-            
-                switch (rolSeleccionado) {
-                    case 'paciente':
-                        window.location.href = "pages/paciente.html";
-                        break;
-                    case 'doctor':
-                        window.location.href = "welcome_doctor.html";
-                        break;
-                    case 'admin':
-                        window.location.href = "welcome_admin.html";
-                        break;
-                    default:
-                        mostrarError();
-                        break;
-                }
-            
-                localStorage.setItem('auth', true);
-            } else {
-                console.log('FAIL');
-                mostrarError();
-            }
-            
-            function mostrarError() {
-                const mensajeError = document.getElementById('mensajeError');
-                if (mensajeError) {
-                    mensajeError.style.display = 'block';
-                }
-            }
-            
+    
+        // Obtener la lista desordenada
+        const listaDesordenada = document.querySelector('#miLista ul');
+        console.log(listaDesordenada)
+        // Obtener los elementos de lista (cada propiedad del usuario)
+        const elementosLista = listaDesordenada.querySelectorAll('li');
+    
+        // Crear un objeto para almacenar los datos del usuario de la lista desordenada
+        const datosUsuario = {};
+        
+        // Recorrer los elementos de lista para obtener los datos del usuario
+        elementosLista.forEach(elemento => {
+            const textoElemento = elemento.textContent.trim();
+            const [clave, valor] = textoElemento.split(':');
+            datosUsuario[clave.trim()] = valor.trim();
+        });
+        console.log(datosUsuario)
+        // Comparar los datos ingresados por el usuario con los datos obtenidos de la lista desordenada
+        if (datosUsuario.nombre === nombreUsuarioIngresado && datosUsuario.contraseña1 === contraseñaIngresada) {
+            alert('Inicio de sesión exitoso.');
+            // Redirigir al usuario a otra página
+            window.location.href = 'pages/paciente.html';
+        } else {
+            alert('Nombre de usuario o contraseña incorrectos.');
+        }
     });
+    
 });
-
-
-
-
-
-// Obtener los datos del LocalStorage
-const datosLocalStorage = localStorage.getItem('paciente');
-
-// Convertir los datos a un objeto JavaScript usando JSON.parse
-const datos = JSON.parse(datosLocalStorage);
-
-const arrayDatos = [];
-
-// Recorrer las propiedades del objeto y agregar sus valores al array
-for (const key in datos) {
-    if (Object.hasOwnProperty.call(datos, key)) {
-        arrayDatos.push(datos[key]);
-    }
-}
-
-// Verificar si el arrayDatos contiene los elementos que necesitas
-console.log('Array de datos:', arrayDatos);

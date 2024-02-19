@@ -35,33 +35,33 @@ function mostrarAnuncios() {
 }
 
 
-const datosLocalStorage = localStorage.getItem('paciente');
-const datos = JSON.parse(datosLocalStorage);
-const arrayDatos = [];
-
-// Recorrer las propiedades del objeto y agregar sus valores al array
-for (const key in datos) {
-    if (Object.hasOwnProperty.call(datos, key)) {
-        arrayDatos.push(datos[key]);
-    }
-}
+const datosLocalStorage = localStorage.getItem('nuevoRegistro');
+const arrayDatos = JSON.parse(datosLocalStorage);
 
 document.addEventListener("DOMContentLoaded", () => {
      updateUserList();
 });
 
-const listaElement = document.getElementById('miLista');
-
-// Recorrer los elementos de la lista y crear elementos de lista para cada uno
 function updateUserList() {
-    // Limpiar el contenido previo del elemento
-    listaElement.innerHTML = '';
-    arrayDatos.forEach(elemento => {
-        const listItem = document.createElement('li');
-        listItem.textContent = elemento;
-        listaElement.appendChild(listItem);
+    const miLista = document.getElementById('miLista');
+    miLista.innerHTML = ''; // Limpiar el contenido previo del elemento
+
+    arrayDatos.forEach(usuario => {
+        const ulElement = document.createElement('ul');
+        ulElement.classList.add('list-group', 'list-group-horizontal'); // Agregar las clases necesarias
+
+        for (const clave in usuario) {
+            if (Object.hasOwnProperty.call(usuario, clave)) {
+                const liElement = document.createElement('li');
+                liElement.textContent = `${clave}: ${usuario[clave]}`;
+                ulElement.appendChild(liElement);
+            }
+        }
+        
+        miLista.appendChild(ulElement);
     });
 }
+
 
 function approveUser(userId) {
     // Simulated backend approval logic
