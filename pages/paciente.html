@@ -94,9 +94,40 @@
             </div>
             <div class="perfil-usuario-history">
                 <h3 class="titulo">Turnos</h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <!-- Mensaje de "No solicito turno" -->
+                <p style="display: none;" id="mensaje-no-turno" ;>No ha solicitado ningún turno</p>
+                <!-- Resumen del turno -->
+                <div id="resumen-turno">
+                    <p>Fecha del Turno: <span id="fecha-turno-resumen">...</span></p>
+                    <p>Especialidad: <span id="especialidad-turno-resumen">...</span></p>
+                    <!-- Botón para ver el detalle del turno -->
+                    <button id="verDetalle" class="btn btn-primary">Ver Detalle del Turno</button>
+                    <button id="eliminarDatos" class="btn btn-danger">Dar de Baja el Turno</button>
+                </div>
+
+                <!-- Modal para el detalle del turno -->
+                <div id="detalleTurno" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3 class="titulo">Detalle del Turno</h3>
+                        <!-- Contenido de la tabla con el detalle completo del turno -->
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Campo</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="turnos">
+                                    <!-- Aquí se insertarán los datos del formulario -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <div class="boton-regresar"
@@ -107,6 +138,123 @@
     <!-- ***** JS ***** -->
     <script src="/js/nav.js"></script>
     <script src="/js/login.js"></script>
+    <script>
+        // Obtener el elemento del resumen del turno
+        document.addEventListener('DOMContentLoaded', function () {
+            const resumenTurno = document.getElementById('resumen-turno');
+            const fechaActual = new Date().toLocaleDateString();
+
+            // Obtener los datos del formulario guardados en el almacenamiento local
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                const formData = JSON.parse(formDataString);
+
+                // Mostrar la fecha del turno
+                document.getElementById('fecha-turno-resumen').textContent = fechaActual;
+
+                // Mostrar la especialidad del turno
+                document.getElementById('especialidad-turno-resumen').textContent = formData['especialidad'];
+            }
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                const formData = JSON.parse(formDataString);
+                const formDataBody = document.getElementById('turnos');
+
+                for (const key in formData) {
+                    if (formData.hasOwnProperty(key)) {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${key}</td><td>${formData[key]}</td>`;
+                        formDataBody.appendChild(row);
+                    }
+                }
+            }
+
+            // Obtener el modal
+            const modal = document.getElementById("detalleTurno");
+
+            // Obtener el botón que abre el modal
+            const btnAbrirModal = document.getElementById("verDetalle");
+
+            // Obtener el elemento <span> que cierra el modal
+            const spanCerrarModal = document.getElementsByClassName("close")[0];
+
+            // Cuando el usuario haga clic en el botón, abrir el modal
+            btnAbrirModal.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // Cuando el usuario haga clic en <span> (x), cerrar el modal
+            spanCerrarModal.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Cuando el usuario haga clic fuera del modal, cerrarlo
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el botón para eliminar los datos del formulario
+            const btnEliminarDatos = document.getElementById('eliminarDatos');
+
+            // Manejar el evento click del botón para eliminar los datos
+            btnEliminarDatos.addEventListener('click', function () {
+                // Eliminar los datos del formulario del almacenamiento local
+                localStorage.removeItem('formularioData');
+
+                // Ocultar el contenedor de turnos solicitados
+                const contenedorTurnos = document.getElementById('perfil-usuario-history');
+                contenedorTurnos.style.display = 'none';
+
+                // Mostrar el mensaje de "No ha solicitado ningún turno"
+                const mensajeNoTurno = document.getElementById('mensaje-no-turno');
+                mensajeNoTurno.style.display = 'block';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el botón para eliminar los datos del formulario
+            const btnEliminarDatos = document.getElementById('eliminarDatos');
+
+            // Obtener el contenedor de turnos solicitados y el mensaje de "No ha solicitado turno"
+            const contenedorTurnos = document.getElementById('perfil-usuario-history');
+            const mensajeNoTurno = document.getElementById('mensaje-no-turno');
+
+            // Manejar el evento click del botón para eliminar los datos
+            btnEliminarDatos.addEventListener('click', function () {
+                // Eliminar los datos del formulario del almacenamiento local
+                localStorage.removeItem('formularioData');
+
+                // Ocultar el contenedor de turnos solicitados
+                contenedorTurnos.style.display = 'none';
+
+                // Mostrar el mensaje de "No ha solicitado ningún turno"
+                mensajeNoTurno.style.display = 'block';
+            });
+
+            // Obtener el formulario guardado en el almacenamiento local
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                // Si hay datos en el formulario, mostrar el contenedor de turnos solicitados y ocultar el mensaje
+                contenedorTurnos.style.display = 'block';
+                mensajeNoTurno.style.display = 'none';
+            } else {
+                // Si no hay datos en el formulario, mostrar el mensaje y ocultar el contenedor de turnos solicitados
+                contenedorTurnos.style.display = 'none';
+                mensajeNoTurno.style.display = 'block';
+            }
+        });
+
+    </script>
+
     <!-- ***** ICONOS ***** -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
