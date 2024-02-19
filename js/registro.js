@@ -24,6 +24,7 @@ let especialidad = document.getElementById('especialidad');
 let correo = document.getElementById('correo');
 let contraseña = document.getElementById('contraseña');
 let contraseña2 = document.getElementById('contraseña2');
+let rol =document.getElementById('registrar');
 
 // document.querySelector('form').addEventListener('submit', e => {
 //     e.preventDefault();

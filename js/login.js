@@ -35,93 +35,80 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // class Usuario {
-    //     constructor(nombre, password, rol) {
-    //         this.nombre = nombre;
-    //         this.password = password;
-    //         this.rol = rol;
-    //     }
-    // }
+    // Clase Usuario
+    class Usuario {
+        constructor(nombre, contraseña1, registrar) {
+            this.nombre = nombre;
+            this.contraseña1 = contraseña1;
+            this.registrar = registrar;
+        }
+    }
 
-    // const usuario1 = new Usuario('eric', 'eric', 'paciente');
-    // const usuario2 = new Usuario('pipo', 'pipo', 'admin');
-    // const baseDatosUsuarios = [usuario1, usuario2];
+    // Función para crear usuarios a partir de los datos en localStorage
+    function crearUsuariosDesdeLocalStorage() {
+        // Obtener los datos de localStorage
+        const usuariosAprobadosJSON = localStorage.getItem('usuariosAprobados');
+        // Verificar si hay datos en localStorage
+        if (usuariosAprobadosJSON) {
+            // Convertir los datos a un array de objetos
+            const usuariosAprobados = JSON.parse(usuariosAprobadosJSON);
+            // Iterar sobre los usuarios aprobados y crear instancias de Usuario
+            usuariosAprobados.forEach(usuario => {
+                const usuarioInstancia = new Usuario(usuario.nombre, usuario.contraseña1, usuario.registrar);
+                baseDatosUsuarios.push(usuarioInstancia);
+            });
+        }
+    }
 
-    // formulario.addEventListener('submit', function(event) {
-    //     event.preventDefault();
+    // Array para almacenar instancias de Usuario
+    const baseDatosUsuarios = [];
 
-    //     const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
-    //     const contraseñaIngresada = document.getElementById('contraseña').value;
-    //     const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
+    // Llamar a la función para crear usuarios desde localStorage
+    crearUsuariosDesdeLocalStorage();
+    console.log(baseDatosUsuarios)
 
-    //     let usuarioValido = baseDatosUsuarios.find(usuario => 
-    //         usuario.nombre === nombreUsuarioIngresado && 
-    //         usuario.password === contraseñaIngresada && 
-    //         usuario.rol === rolSeleccionado);
-
-    //         if (usuarioValido) {
-    //             console.log('OK');
-            
-    //             switch (rolSeleccionado) {
-    //                 case 'paciente':
-    //                     window.location.href = "pages/paciente.html";
-    //                     break;
-    //                 case 'doctor':
-    //                     window.location.href = "welcome_doctor.html";
-    //                     break;
-    //                 case 'admin':
-    //                     window.location.href = "welcome_admin.html";
-    //                     break;
-    //                 default:
-    //                     mostrarError();
-    //                     break;
-    //             }
-            
-    //             localStorage.setItem('auth', true);
-    //         } else {
-    //             console.log('FAIL');
-    //             mostrarError();
-    //         }
-            
-    //         function mostrarError() {
-    //             const mensajeError = document.getElementById('mensajeError');
-    //             if (mensajeError) {
-    //                 mensajeError.style.display = 'block';
-    //             }
-    //         }
-            
-    // });
-
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    formulario.addEventListener('submit', function(event) {
         event.preventDefault();
-    
+
         const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
         const contraseñaIngresada = document.getElementById('contraseña').value;
-    
-        // Obtener la lista desordenada
-        const listaDesordenada = document.querySelector('#miLista ul');
-        console.log(listaDesordenada)
-        // Obtener los elementos de lista (cada propiedad del usuario)
-        const elementosLista = listaDesordenada.querySelectorAll('li');
-    
-        // Crear un objeto para almacenar los datos del usuario de la lista desordenada
-        const datosUsuario = {};
-        
-        // Recorrer los elementos de lista para obtener los datos del usuario
-        elementosLista.forEach(elemento => {
-            const textoElemento = elemento.textContent.trim();
-            const [clave, valor] = textoElemento.split(':');
-            datosUsuario[clave.trim()] = valor.trim();
-        });
-        console.log(datosUsuario)
-        // Comparar los datos ingresados por el usuario con los datos obtenidos de la lista desordenada
-        if (datosUsuario.nombre === nombreUsuarioIngresado && datosUsuario.contraseña1 === contraseñaIngresada) {
-            alert('Inicio de sesión exitoso.');
-            // Redirigir al usuario a otra página
-            window.location.href = 'pages/paciente.html';
-        } else {
-            alert('Nombre de usuario o contraseña incorrectos.');
-        }
+        const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
+
+        let usuarioValido = baseDatosUsuarios.find(usuario => 
+            usuario.nombre === nombreUsuarioIngresado && 
+            usuario.contraseña1 === contraseñaIngresada && 
+            usuario.registrar === rolSeleccionado);
+
+            if (usuarioValido) {
+                console.log('OK');
+            
+                switch (rolSeleccionado) {
+                    case 'paciente':
+                        window.location.href = "pages/paciente.html";
+                        break;
+                    case 'doctor':
+                        window.location.href = "pages/paciente.html";
+                        break;
+                    case 'admin':
+                        window.location.href = "pages/admin.html";
+                        break;
+                    default:
+                        mostrarError();
+                        break;
+                }
+            
+                localStorage.setItem('auth', true);
+            } else {
+                console.log('FAIL');
+                mostrarError();
+            }
+            
+            function mostrarError() {
+                const mensajeError = document.getElementById('mensajeError');
+                if (mensajeError) {
+                    mensajeError.style.display = 'block';
+                }
+            }
+            
     });
-    
 });
