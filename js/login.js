@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             switch (rolSeleccionado) {
                 case 'paciente':
-                    window.location.href = "pages/paciente.html";
+                    window.location.href = "pages/formulario.html";
                     break;
                 case 'doctor':
-                    window.location.href = "pages/paciente.html";
+                    window.location.href = "pages/medico.html";
                     break;
                 case 'administrador':
                     window.location.href = "pages/admin.html";
