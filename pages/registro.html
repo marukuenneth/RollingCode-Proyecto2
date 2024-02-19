@@ -12,45 +12,65 @@
 
 
   <!--Links CSS-->
-  <link rel="stylesheet" href="./CSS/styleregistro.css">
+  <link rel="stylesheet" href="/css/styleregistro.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <title>Rolling Medical | Registrarse</title>
 </head>
 
 <body>
-  <form class="form-register ">
+  <form class="form-register formulario" id="formulario">
     <h4>REGISTRARSE </h4>
     <label for="registrar">Me estoy registrando como: </label><br>
-    <select class="botons" name="registrar" id="registrar" onchange="mostrar(this)">
-      <option value="">Seleccione una opcion</option>
-      <option value="paciente">Paciente</option>
-      <option value="medico">Medico</option>
-      <option value="0">Administrador</option>
+    <select class="botons" name="registrar" id="registrar" onchange="mostrar(this)" required>
+      <option class="eleccionRegistro" value="0">Seleccione una opcion</option>
+      <option class="eleccionRegistro" value="paciente">Paciente</option>
+      <option class="eleccionRegistro" value="medico">Medico</option>
+      <option class="eleccionRegistro" value="1">Administrador</option>
     </select><br><br>
+
     <div class="divisiones">
+
+      <!-- peticion de NOMBRE, APELLIDO, DOMICILIO , PROVINCIA y TELEFONO -->
       <div class="division1">
-        <input class=" controls " type=" text " name=" nombres " id=" nombres " placeholder="Ingrese su Nombre">
-        <input class=" controls " type=" text " name=" apellidos " id=" apellidos " placeholder="Ingrese su Apellido">
-        <input class=" controls " type=" text " name=" direccion " id=" direccion " placeholder="Ingrese su Domicilio">
-        <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
-        <input class=" controls " type="date" name=" nacimiento " id=" nacimiento " placeholder="Fecha de nacimiento">
+        <input class="controls" type="text" name="nombre" id="nombre" onblur="validarNombre()"required maxlength="30" minlength="2" placeholder="Ingrese su Nombre" >
+        <input class="controls" type="text" name="apellido" id="apellido" onblur="validarApellido()" required maxlength="30" minlength="2" placeholder="Ingrese su Apellido" >
+        <input class="controls" type="text" name="direccion" id="direccion" onblur="validarDireccion()" required  maxlength="30" minlength="2" placeholder="Ingrese su Domicilio"  >
+        <input class="controls" type="tel" name="telefono" id="telefono" onblur="validarTelefono()" required maxlength="15" minlength="7"placeholder="Ingrese su telefono"  >
+        <select class="botons" name="provincia" id="provincia" required>
+          <option value="0">Seleccione su provincia</option>
+          <option value="Tucumán">Tucumán</option>
+          <option value="Salta">Salta</option>
+          <option value="Jujuy">Jujuy</option>
+          <option value="Catamarca">Catamarca</option>
+          <option value="Santiago del Estero">Santiago del Estero</option>
+        </select>
+
       </div>
+      
+      <!-- peticion de NACIMIENTO, OBRASOCIAL y OCUPACION(paciente), ESPECIALIDAD y MATRICULA(medico)-->
       <div class="division2">
+        <label for="nacimiento">Ingrese su fecha de nacimiento</label><br>
+        <input class="controls" type="date" name="nacimiento" id="nacimiento" onblur="validarNacimiento()" required placeholder="Fecha de nacimiento" >
+        
+        <!-- PACIENTE -->
         <div id="paciente" class="esconder">
           <label for="registrar">Ingrese su obra social: </label><br>
-          <select class="botons" name="obrasocial" id="obrasocial">
+          <select class="botons" name="obrasocial" id="obrasocial" required>
             <option value="">Seleccione una opcion</option>
-            <option value="obrasocial">Boreal</option>
-            <option value="obrasocial">Prensa</option>
-            <option value="obrasocial">PAMI</option>
-            <option value="obrasocial">Swift Medical</option>
-            <option value="obrasocial">Subsidio de Salud</option>
-            <option value="obrasocial">No tengo obra social</option>
+            <option value="Boreal">Boreal</option>
+            <option value="Prensa">Prensa</option>
+            <option value="PAMI">PAMI</option>
+            <option value="Swift Medical">Swift Medical</option>
+            <option value="Subsidio de Salud">Subsidio de Salud</option>
+            <option value="No tengo obra social">No tengo obra social</option>
           </select>
-          <input class=" controls " type=" text " name=" ocupacion " id=" ocupacion " placeholder="¿A qué se dedica?">
+          <input class="controls" type="text" name="ocupacion" id="ocupacion" required placeholder="¿A qué se dedica?">
         </div>
+
+        <!--MEDICO  -->
         <div id="medico" class="esconder">
           <label for="especialidad">Ingrese su especialidad: </label>
-          <select class="botons" name="especialidad" id="especialidad" class="" aria-required="true" aria-invalid="false" aria-placeholder="Especialidad">
+          <select class="botons" name="especialidad" id="especialidad" class="especialidad" required aria-required="true" aria-invalid="false" aria-placeholder="Especialidad" >
             <option value="">Seleccione una opcion</option>
             <option value="Clinica Médica">Clinica Médica</option>
             <option value="Cardiología">Cardiología</option>
@@ -74,22 +94,31 @@
             <option value="Pediatría">Pediatría</option>
             <option value="Resonancia Mangnética">Resonancia Mangnética</option>
           </select>
-          <input class=" controls " type=" text " name=" matricula " id=" matricula " placeholder="Ingrese su numero de matricula profesional">
+          <input class="controls" type="text" name="matricula" id="matricula" onblur="validarMatricula()" required maxlength="15" minlength="2" placeholder="Ingrese su numero de matricula profesional">
         </div>
-        <input class=" controls " type=" email " name=" correo " id=" correo "
-        placeholder="Ingrese su Correo electrónico">
-        <input class=" controls " type=" password " name=" correo " id=" correo " placeholder="Ingrese su Contraseña">
-        <input class=" controls " type=" password " name=" correo " id=" correo " placeholder="Repita su Contraseña">
+
+        <!-- peticion de EMAIL, CONTRASEÑA1 y CONTRASEÑA2 -->
+        <input class="controls" type="email" name="correo" id="correo" onblur="validarCorreo()" placeholder="Ingrese su Correo electrónico">
+        <div>
+          <input class="controls" type="password" name="contraseña1" id="contraseña1" onblur="validarContraseña()" required placeholder="Ingrese su Contraseña">
+          <i class="uil uil-lock password"></i>
+          <i class="uil uil-eye-slash pw_hide"></i>
+        </div>
+        <div>
+          <input class="controls" type="password" name="contraseña2" id="contraseña2" onblur="validarContraseña2()" required placeholder="Repita su Contraseña">
+          <i class="uil uil-lock password"></i>
+          <i class="uil uil-eye-slash pw_hide"></i>
+        </div>
       </div>
     </div>
 
-    <input class=" controls " type="checkbox" name=" acepto " id="acepto" value="acepto"><label for="acepto">Acepto y estoy de acuerdo con los<a href=""> Términos y Condiciones </a></label>
+    <!-- CHECKBOX terminos y condiciones -->
+    <input class="controls" type="checkbox" name="acepto" id="acepto" value="acepto" required>
+    <label for="acepto">Acepto los <a href="">Términos y Condiciones </a></label>
+    <div id="mensajeError" class="mensaje-error oculto">Credenciales incorrectas. Por favor, inténtalo de nuevo</div>
+    <button type="submit" class="botons">Registrarse</button>
 
-
-    <button type="submit" class="botons"> <a href=" ./index.html ">Registrarme</button>
-
-
-    <p> <a href=" ./index.html "> ¿Ya tengo Cuenta? </a> </p>
+    <p> <a href="/index.html "> ¿Ya tengo Cuenta? </a> </p>
   </form>
 
 </body>

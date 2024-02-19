@@ -95,7 +95,12 @@
     padding: 1rem;
     width: 50%;
   }
-
+  .oculto {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: #ff0000;
+}
   /* RESPONSIVE */
   /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
