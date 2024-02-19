@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   background-color: #f8f9fa;
   color: #333;
+  padding:5vw 10vw;
 }
 
 .miembros {
@@ -21,8 +24,8 @@
 
 .miembro img {
   height: auto;
-  border-radius: 50%;
-  max-width: 100%;
+  border-radius: 100%;
+  max-width: 30vh;
 }
 
 .miembro h3 {
@@ -118,14 +121,67 @@
 }
 
 /* Estilos adicionales para hacer responsive */
-@media (max-width: 768px) {
+/* Media query para dispositivos móviles */
+@media (max-width: 576px) {
+  body{
+    padding-top: 50px;
+  }
+  
+  .titulo{
+    font-size: 25px;
+    padding-top: 50px;
+  }
   .acerca-text {
     font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .destacado{
+    font-size: 14px;
+  }
+  .miembro img {
+    height: auto;
+    border-radius: 100%;
+    max-width: 35vh;
+  }
+}
+@media (min-width:577px) and (max-width: 767px) {
+  body{
+    padding-top: 500px;
+  }
+  .titulo{
+    padding-bottom: 20px;
+  }
+  .acerca-text {
+    font-size: 20px;
+  }
+  .destacado{
+    font-size: 20px;
+  }
+  .miembro img {
+    height: auto;
+    border-radius: 100%;
+    max-width: 25vh;
   }
 }
 
-@media (max-width: 576px) {
-  .acerca-text {
-    font-size: 12px;
+/* Media query para tablets */
+@media (min-width: 768px) and (max-width: 1206px) {
+  .titulo{
+    font-size: 30px;
+    padding-bottom: 20px;
+    justify-content: center;
   }
+  .acerca-text {
+    font-size: 20px;
+    padding: 30px 25px;
+  }
+  .miembro img {
+    height: auto;
+    border-radius: 100%;
+    max-width: 30vh;
+  }
+  /* Estilos específicos para tablets */
 }
+
+
