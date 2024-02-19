@@ -15,7 +15,7 @@
 <body>
 
     <div class="container-fluid">
-        <div class="row justify-content-center align-content-center">
+        <div class="row justify-content-right align-content-right">
             <div class="col-8 barra">
                 <h4 class="text-light">
                     <img src="/assets/rolling medical (1).png" alt="logo de rolling medical" class="logo">
@@ -24,10 +24,13 @@
             <div class="col-4 barra text-right">
                 <ul class="navbar-nav mr-auto">
                     <li>
-                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
+                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fas fa-user-circle user"></i></a>
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                            <a class="dropdown-item menuperfil cerrar" href="/index.html"><i
+                                    class="fas fa-sign-out-alt m-1"></i>Salir
                             </a>
                         </div>
                     </li>
@@ -38,40 +41,29 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="barra-lateral col-12 col-sm-auto">
+            <div class="barra-lateral col-6 col-sm-auto">
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>General</span></a>
-                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Pacientes</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Medicos</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Administradores</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Usuarios Aceptados</span></a>
+                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>Usuarios</span></a>
+                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Aceptados</span></a>
+                    <a href="#" onclick="mostrarPaginaPrincipal()"><i
+                            class="fas fa-hospital"></i><span>Medicos</span></a>
                     <a href="#" onclick="mostrarAnuncios()"><i
                             class="fas fa-window-maximize"></i><span>Anuncio</span></a>
                 </nav>
             </div>
-            <main class="main col">
-                <!-- Aqui se agregaran los usuarios Pendientes del local storage -->
-                <div id="miLista">
-                </div>
-                <!-- Aqui se agregaran los usuarios Aprobados del local storage -->
-                <div class="aprobados" id="listaAprobados">
-                </div>
-
+            <main class="main col-8">
                 <div class="row justify-content-center align-content-center text-center">
                     <div id="columna1" class="columna1 col-lg-6" style="display: none;">
-                        Medicoss
-                        <div>
-                            (Cuadro de opciones)
+                        Pendientes
+                        <!-- usuarios Pendientes -->
+                        <div id="miLista">
                         </div>
                     </div>
                     <div id="columna2" class="columna2 col-lg-6" style="display: none;">
-                        Turnos
-                        <section id="userList">
-                            <h2>Pending Users</h2>
-                            <ul id="users">
-                                <!-- Pending user list will be displayed here -->
-                            </ul>
-                        </section>
+                        Aprobados
+                        <!-- usuarios Aprobados -->
+                        <div class="aprobados" id="listaAprobados">
+                        </div>
                     </div>
                     <div id="columna3" class="columna3 col-lg-6" style="display: none;">
                         Pagina Principal
