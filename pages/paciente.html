@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -67,21 +67,25 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
-                    <button type="button" class="boton-avatar">
+                    <img id="avatar-img" src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
+                    <input type="file" id="input-avatar" accept="image/*" style="display: none;">
+                    <label for="input-avatar" class="boton-avatar">
                         <i class="far fa-image"></i>
-                    </button>
+                    </label>
                 </div>
             </div>
+            
         </div>
+
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Juan Carlos Gimenez</h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="titulo">Biografía</h3>
+                <textarea id="bio" class="form-control" rows="4"
+                    placeholder="Agrega una descripción breve acerca de ti.."></textarea>
             </div>
 
             <div class="perfil-usuario-datos">
+                <h3 class="titulo">Información</h3>
                 <ul class="lista-datos" id="lista-datos-original">
                     <li><i class="icono fas fa-map-signs"></i> Dirección: <span id="direccion">Calle 123, Ciudad</span>
                     </li>
@@ -110,8 +114,6 @@
 
                 </div>
             </div>
-
-
 
             <div class="perfil-usuario-history">
                 <h3 class="titulo">Turnos</h3>
