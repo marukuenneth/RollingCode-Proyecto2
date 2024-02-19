@@ -45,6 +45,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function subirUsuariosDeEjemplo() {
+        const usuariosDeEjemplo = [
+            new Usuario('Usuario1', 'contraseña1', '2024-02-19'),
+            new Usuario('Usuario2', 'contraseña2', '2024-02-19'),
+            new Usuario('Usuario3', 'contraseña3', '2024-02-19'),
+            {
+                "nombre": "admin",
+                "contraseña1": "admin1234",
+                "registrar": "administrador"
+            }
+        ];
+    
+        localStorage.setItem('usuariosAprobados', JSON.stringify(usuariosDeEjemplo));
+    }
+    
+    subirUsuariosDeEjemplo();
+
+    
     function crearUsuariosDesdeLocalStorage() {
         const usuariosAprobadosJSON = localStorage.getItem('usuariosAprobados');
         if (usuariosAprobadosJSON) {
