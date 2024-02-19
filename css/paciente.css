@@ -221,6 +221,15 @@ body {
     width: 100%;
 }
 
+#resumen-turno p {
+    font-weight: bold;
+}
+
+#resumen-turno span {
+    font-weight: normal;
+}
+
+
 /* Estilos para el botón "Ver Detalle" del turno en el perfil del usuario */
 #verDetalle {
     display: block;

@@ -168,25 +168,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* DATOS TURNOS */
-
-
 // Obtener el elemento del resumen del turno
 document.addEventListener('DOMContentLoaded', function () {
     const resumenTurno = document.getElementById('resumen-turno');
-    const fechaActual = new Date().toLocaleDateString();
+    const solicitudActual = new Date().toLocaleString(); // Cambiar a toLocaleString()
 
     // Obtener los datos del formulario guardados en el almacenamiento local
     const formDataString = localStorage.getItem('formularioData');
     if (formDataString) {
         const formData = JSON.parse(formDataString);
 
-        // Mostrar la fecha del turno
-        document.getElementById('fecha-turno-resumen').textContent = fechaActual;
+        // Mostrar la fecha y hora de solicitud del turno
+        document.getElementById('solicitud-turno-resumen').textContent = solicitudActual;
+
+        // Mostrar la fecha y hora del turno asignado
+        const fechaTurno = formData['fecha'];
+        const horaTurno = formData['hora'];
+        const fechaHoraTurno = fechaTurno + ', ' + horaTurno; // Concatenar fecha y hora
+        document.getElementById('fecha-turno-resumen').textContent = fechaHoraTurno;
 
         // Mostrar la especialidad del turno
         document.getElementById('especialidad-turno-resumen').textContent = formData['especialidad'];
     }
 });
+
+
 
 
 
