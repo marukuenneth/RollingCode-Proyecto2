@@ -42,7 +42,7 @@ function mostrarAnuncios() {
         anuncios.style.display = 'none'
     }
 }    
-// TURNOS
+// Aceptar o rechazar usuarios
 
 // Simulated backend data using localStorage
 let pendingUsers = JSON.parse(localStorage.getItem('pendingUsers')) || [];

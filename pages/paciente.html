@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente</title>
+    <link rel="stylesheet" href="/css/principal.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/paciente.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <div class="encabezado">
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/rolling medical.png" alt="logo"></a>
+            </div>
+            <div class="ubicacion">
+                <img src="/assets/ubicacion logo.png" alt="">
+                <div class="ubicacion_texto">
+                    <span>General Paz 517</span><br>
+                    <span style="color: rgb(45, 45, 250); font-size: 1.25em;"> <strong>+54 381
+                            578-3030</strong></span><br>
+                    <span>San Miguel de Tucumán, Tuc, Arg.</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <a><button type="button" class="btn btn-primary" id="login_open">Ingresar</button></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ***** NAV *****-->
+        <nav class="navbar">
+            <div class="group">
+                <ul class="navigation">
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/pages/error-404.html">Institucion</a></li>
+                    <li><a href="/pages/error-404.html">Servicios</a></li>
+                    <li><a href="/pages/error-404.html">Contacto</a></li>
+                    <li><a href="/pages/error-404.html">Acerca de nosotros</a></li>
+                    <li class="hide"><a href="/pages/paciente.html">Mis turnos</a></li>
+                    <li class="hide"><a href="/pages/slider.html">Mi agenda</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn" id="searchBtn"></ion-icon>
+                    <ion-icon name="close-outline" class="closeBtn" id="closeBtn"></ion-icon>
+                </span>
+            </div>
+
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+
+            <div class="searchBox">
+                <input type="text" placeholder="Search here...">
+            </div>
+        </nav>
+    </header>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Juan Carlos Gimenez</h3>
+                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="perfil-usuario-datos">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-signs"></i> Dirección:</li>
+                    <li><i class="icono fas fa-phone-alt"></i> Teléfono:</li>
+                    <li><i class="icono fas fa-briefcase"></i> Ocupación:</li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-user-check"></i> Registro:</li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Nacimiento:</li>
+                    <li><i class="icono fas fa-building"></i> Obra social:</li>
+                </ul>
+            </div>
+            <div class="perfil-usuario-history">
+                <h3 class="titulo">Turnos</h3>
+                <!-- Mensaje de "No solicito turno" -->
+                <p style="display: none;" id="mensaje-no-turno" ;>No ha solicitado ningún turno</p>
+                <!-- Resumen del turno -->
+                <div id="resumen-turno">
+                    <p>Fecha del Turno: <span id="fecha-turno-resumen">...</span></p>
+                    <p>Especialidad: <span id="especialidad-turno-resumen">...</span></p>
+                    <!-- Botón para ver el detalle del turno -->
+                    <button id="verDetalle" class="btn btn-primary">Ver Detalle del Turno</button>
+                    <button id="eliminarDatos" class="btn btn-danger">Dar de Baja el Turno</button>
+                </div>
+
+                <!-- Modal para el detalle del turno -->
+                <div id="detalleTurno" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3 class="titulo">Detalle del Turno</h3>
+                        <!-- Contenido de la tabla con el detalle completo del turno -->
+                        <div class="table-container">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Campo</th>
+                                        <th>Valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="turnos">
+                                    <!-- Aquí se insertarán los datos del formulario -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="boton-regresar"
+            style="margin-top: 4.25rem; display: flex; justify-content: flex-start; width: 90%;">
+            <a href="/index.html"><button type="button" class="btn btn-primary">Regresar</button></a>
+        </div>
+    </section>
+    <!-- ***** JS ***** -->
+    <script src="/js/nav.js"></script>
+    <script src="/js/login.js"></script>
+    <script>
+        // Obtener el elemento del resumen del turno
+        document.addEventListener('DOMContentLoaded', function () {
+            const resumenTurno = document.getElementById('resumen-turno');
+            const fechaActual = new Date().toLocaleDateString();
+
+            // Obtener los datos del formulario guardados en el almacenamiento local
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                const formData = JSON.parse(formDataString);
+
+                // Mostrar la fecha del turno
+                document.getElementById('fecha-turno-resumen').textContent = fechaActual;
+
+                // Mostrar la especialidad del turno
+                document.getElementById('especialidad-turno-resumen').textContent = formData['especialidad'];
+            }
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                const formData = JSON.parse(formDataString);
+                const formDataBody = document.getElementById('turnos');
+
+                for (const key in formData) {
+                    if (formData.hasOwnProperty(key)) {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${key}</td><td>${formData[key]}</td>`;
+                        formDataBody.appendChild(row);
+                    }
+                }
+            }
+
+            // Obtener el modal
+            const modal = document.getElementById("detalleTurno");
+
+            // Obtener el botón que abre el modal
+            const btnAbrirModal = document.getElementById("verDetalle");
+
+            // Obtener el elemento <span> que cierra el modal
+            const spanCerrarModal = document.getElementsByClassName("close")[0];
+
+            // Cuando el usuario haga clic en el botón, abrir el modal
+            btnAbrirModal.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // Cuando el usuario haga clic en <span> (x), cerrar el modal
+            spanCerrarModal.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Cuando el usuario haga clic fuera del modal, cerrarlo
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el botón para eliminar los datos del formulario
+            const btnEliminarDatos = document.getElementById('eliminarDatos');
+
+            // Manejar el evento click del botón para eliminar los datos
+            btnEliminarDatos.addEventListener('click', function () {
+                // Eliminar los datos del formulario del almacenamiento local
+                localStorage.removeItem('formularioData');
+
+                // Ocultar el contenedor de turnos solicitados
+                const contenedorTurnos = document.getElementById('perfil-usuario-history');
+                contenedorTurnos.style.display = 'none';
+
+                // Mostrar el mensaje de "No ha solicitado ningún turno"
+                const mensajeNoTurno = document.getElementById('mensaje-no-turno');
+                mensajeNoTurno.style.display = 'block';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el botón para eliminar los datos del formulario
+            const btnEliminarDatos = document.getElementById('eliminarDatos');
+
+            // Obtener el contenedor de turnos solicitados y el mensaje de "No ha solicitado turno"
+            const contenedorTurnos = document.getElementById('perfil-usuario-history');
+            const mensajeNoTurno = document.getElementById('mensaje-no-turno');
+
+            // Manejar el evento click del botón para eliminar los datos
+            btnEliminarDatos.addEventListener('click', function () {
+                // Eliminar los datos del formulario del almacenamiento local
+                localStorage.removeItem('formularioData');
+
+                // Ocultar el contenedor de turnos solicitados
+                contenedorTurnos.style.display = 'none';
+
+                // Mostrar el mensaje de "No ha solicitado ningún turno"
+                mensajeNoTurno.style.display = 'block';
+            });
+
+            // Obtener el formulario guardado en el almacenamiento local
+            const formDataString = localStorage.getItem('formularioData');
+            if (formDataString) {
+                // Si hay datos en el formulario, mostrar el contenedor de turnos solicitados y ocultar el mensaje
+                contenedorTurnos.style.display = 'block';
+                mensajeNoTurno.style.display = 'none';
+            } else {
+                // Si no hay datos en el formulario, mostrar el mensaje y ocultar el contenedor de turnos solicitados
+                contenedorTurnos.style.display = 'none';
+                mensajeNoTurno.style.display = 'block';
+            }
+        });
+
+    </script>
+
+    <!-- ***** ICONOS ***** -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- ***** SCRIPTS ***** -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
