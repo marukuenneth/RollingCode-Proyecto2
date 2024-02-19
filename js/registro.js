@@ -24,7 +24,6 @@ let especialidad = document.getElementById('especialidad');
 let correo = document.getElementById('correo');
 let contraseña = document.getElementById('contraseña');
 let contraseña2 = document.getElementById('contraseña2');
-let rol =document.getElementById('registrar');
 
 // document.querySelector('form').addEventListener('submit', e => {
 //     e.preventDefault();
@@ -48,6 +47,8 @@ document.querySelector('form').addEventListener('submit', e => {
         storage.push(data);
         localStorage.setItem('nuevoRegistro', JSON.stringify(storage));
     }
+    window.location.href = "/index.html";
+    alert("Nuevo usuario registrado. En 24hs. podrás ingresar a tu nueva cuenta creada, cuando los administradores acepten tu usuario.");
 })
 
 
@@ -259,6 +260,7 @@ function validarContraseña2() {
     const password2 = document.getElementById('contraseña2').value.trim();
     let expresionRegularContrasena = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,20}$/;
 
+    validarContraseña();
     if (!expresionRegularContrasena.test(password2)||password !== password2 || password2 === '') {
         alert("las contraseñas no coinciden");
     } else {
