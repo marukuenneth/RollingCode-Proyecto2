@@ -1,7 +1,5 @@
 function mostrarMedicos() {
-console.log("string")
     var medicos = document.getElementById('columna1')
-console.log(medicos)
     if (medicos.style.display == 'none') {
         medicos.style.display = 'block'
     } else {
@@ -10,9 +8,7 @@ console.log(medicos)
 }
 
 function mostrarTurnos() {
-
     var turnos = document.getElementById('columna2')
-
     if (turnos.style.display == 'none') {
         turnos.style.display = 'block'
     } else {
@@ -21,10 +17,7 @@ function mostrarTurnos() {
 }
 
 function mostrarPaginaPrincipal() {
-
     var paginaPrincipal = document.getElementById('columna3')
-
-
     if (paginaPrincipal.style.display == 'none') {
         paginaPrincipal.style.display = 'block'
     } else {
@@ -33,36 +26,40 @@ function mostrarPaginaPrincipal() {
 }
 
 function mostrarAnuncios() {
-
     var anuncios = document.getElementById('columna4')
-
     if (anuncios.style.display == 'none') {
         anuncios.style.display = 'block'
     } else {
         anuncios.style.display = 'none'
     }
-}    
-// Aceptar o rechazar usuarios
+}
 
-// Simulated backend data using localStorage
-let pendingUsers = JSON.parse(localStorage.getItem('pendingUsers')) || [];
+
+const datosLocalStorage = localStorage.getItem('paciente');
+const datos = JSON.parse(datosLocalStorage);
+const arrayDatos = [];
+
+// Recorrer las propiedades del objeto y agregar sus valores al array
+for (const key in datos) {
+    if (Object.hasOwnProperty.call(datos, key)) {
+        arrayDatos.push(datos[key]);
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-    updateUserList();
+     updateUserList();
 });
 
-function updateUserList() {
-    const userList = document.getElementById("users");
-    userList.innerHTML = "";
+const listaElement = document.getElementById('miLista');
 
-    pendingUsers.forEach(user => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `
-            <span>${user.username}</span>
-            <button onclick="approveUser(${user.id})">Approve</button>
-            <button onclick="rejectUser(${user.id})">Reject</button>
-        `;
-        userList.appendChild(listItem);
+// Recorrer los elementos de la lista y crear elementos de lista para cada uno
+function updateUserList() {
+    // Limpiar el contenido previo del elemento
+    listaElement.innerHTML = '';
+    arrayDatos.forEach(elemento => {
+        const listItem = document.createElement('li');
+        listItem.textContent = elemento;
+        listaElement.appendChild(listItem);
     });
 }
 
@@ -97,4 +94,3 @@ function simulateUserRegistration() {
     localStorage.setItem('pendingUsers', JSON.stringify(pendingUsers));
     updateUserList();
 }
-

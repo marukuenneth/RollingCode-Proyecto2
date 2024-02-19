@@ -92,3 +92,25 @@ document.addEventListener("DOMContentLoaded", function() {
             
     });
 });
+
+
+
+
+
+// Obtener los datos del LocalStorage
+const datosLocalStorage = localStorage.getItem('paciente');
+
+// Convertir los datos a un objeto JavaScript usando JSON.parse
+const datos = JSON.parse(datosLocalStorage);
+
+const arrayDatos = [];
+
+// Recorrer las propiedades del objeto y agregar sus valores al array
+for (const key in datos) {
+    if (Object.hasOwnProperty.call(datos, key)) {
+        arrayDatos.push(datos[key]);
+    }
+}
+
+// Verificar si el arrayDatos contiene los elementos que necesitas
+console.log('Array de datos:', arrayDatos);
