@@ -59,10 +59,14 @@ body {
     z-index: 1;
 }
 
-.seccion-perfil-usuario .perfil-usuario-avatar img {
-    width: 100%;
+.seccion-perfil-usuario .perfil-usuario-avatar #avatar-img {
     position: relative;
+    display: none;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
@@ -76,13 +80,25 @@ body {
     height: 45px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar:hover {
+    background-color: #317FFF;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar i {
+    font-size: 1rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
     position: relative;
     max-width: 900px;
-    /* ajustable */
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
@@ -90,6 +106,8 @@ body {
     width: 100%;
     font-size: 1.75em;
     margin-bottom: 0.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .texto {
@@ -99,7 +117,6 @@ body {
 
 
 /* Estilos para el contenedor de rellenar datos */
-
 .seccion-perfil-usuario .perfil-usuario-datos,
 .seccion-perfil-usuario .perfil-usuario-bio,
 .seccion-perfil-usuario .perfil-usuario-history {
@@ -122,17 +139,20 @@ body {
 .seccion-perfil-usuario .perfil-usuario-datos .lista-datos {
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
-    gap: 20px; /* Espaciado entre elementos */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas de igual ancho */
+    gap: 20px;
+    /* Espaciado entre elementos */
 }
 
 .seccion-perfil-usuario .perfil-usuario-datos .lista-datos li {
     padding: 5px 0;
     box-sizing: border-box;
-    width: 100%; /* Ancho completo de cada elemento en la cuadrícula */
+    width: 100%;
+    /* Ancho completo de cada elemento en la cuadrícula */
 }
 
-.seccion-perfil-usuario .perfil-usuario-datos .lista-datos li > .icono {
+.seccion-perfil-usuario .perfil-usuario-datos .lista-datos li>.icono {
     margin-right: 1rem;
     font-size: 1.2rem;
     vertical-align: middle;
@@ -141,8 +161,8 @@ body {
 .seccion-perfil-usuario .perfil-usuario-datos #editarDatos,
 #guardarCambios {
     width: 100%;
-    margin-top: 1rem; 
-    font-size: 1em; 
+    margin-top: 1rem;
+    font-size: 1em;
     padding: 5px;
 }
 
@@ -220,4 +240,3 @@ body {
         width: 95%;
     }
 }
-

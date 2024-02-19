@@ -1,15 +1,70 @@
+/* FOTO DE PERFIL */
 document.addEventListener('DOMContentLoaded', function () {
-    const btnEditarDatos = document.getElementById('editarDatos');
+    const inputAvatar = document.getElementById('input-avatar');
+    const avatarImg = document.getElementById('avatar-img');
+
+    // Cargar la imagen de perfil desde el almacenamiento local si existe
+    const savedAvatar = localStorage.getItem('avatar');
+    if (savedAvatar) {
+        avatarImg.src = savedAvatar;
+        avatarImg.style.display = 'block'; // Mostrar la imagen después de cargarla
+    }
+
+    // Escuchar cambios en el input de tipo file
+    inputAvatar.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                avatarImg.src = e.target.result;
+                // Guardar la imagen en el almacenamiento local
+                localStorage.setItem('avatar', e.target.result);
+                avatarImg.style.display = 'block'; // Mostrar la imagen después de cargarla
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+
+/* DATOS BIOGRAFIA */
+
+document.addEventListener('DOMContentLoaded', function () {
+    const bioTextarea = document.getElementById('bio');
+
+    // Mostrar la biografía almacenada al cargar la página
+    const bioGuardada = localStorage.getItem('bioUsuario');
+    if (bioGuardada) {
+        bioTextarea.value = bioGuardada;
+    }
+
+    // Guardar automáticamente la biografía al modificar el contenido del textarea
+    bioTextarea.addEventListener('input', function () {
+        const nuevaBio = bioTextarea.value;
+        localStorage.setItem('bioUsuario', nuevaBio);
+    });
+});
+
+
+
+/* DATOS PERSONALES */
+
+// Espera a que el DOM esté completamente cargado para ejecutar el código
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // Obtener referencias a los elementos del DOM
+    const btnEditarDatos = document.getElementById('editarDatos'); // Botón para editar datos
     const btnGuardarCambios = document.getElementById('guardarCambios');
-    const listaDatosOriginal = document.getElementById('lista-datos-original');
-    const listaDatosEditable = document.getElementById('lista-datos-editable');
-    const inputs = {
-        direccion: document.getElementById('input-direccion'),
-        telefono: document.getElementById('input-telefono'),
+    const listaDatosOriginal = document.getElementById('lista-datos-original'); // Lista de datos original
+    const listaDatosEditable = document.getElementById('lista-datos-editable'); 
+    // Objeto que contiene referencias a los campos de entrada de datos
+    const inputs = { 
+        direccion: document.getElementById('input-direccion'), // Campo de dirección
+        telefono: document.getElementById('input-telefono'), 
         ocupacion: document.getElementById('input-ocupacion'),
-        registro: document.getElementById('input-registro'),
-        nacimiento: document.getElementById('input-nacimiento'),
-        obraSocial: document.getElementById('input-obraSocial'),
+        registro: document.getElementById('input-registro'), 
+        nacimiento: document.getElementById('input-nacimiento'), 
+        obraSocial: document.getElementById('input-obraSocial'), 
     };
 
     // Mostrar campos de entrada al hacer clic en "Editar Datos"
