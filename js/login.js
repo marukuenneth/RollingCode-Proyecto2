@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const formOpenBtn = document.querySelector("#login_open");
     const formOpenBtn2 = document.querySelector("#login_open2");
     const formulariosIngreso = document.querySelector(".formularios_ingreso");
@@ -26,16 +26,15 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
-    botonesRol.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            botonesRol.forEach(function(btn) {
+    botonesRol.forEach(function (boton) {
+        boton.addEventListener('click', function () {
+            botonesRol.forEach(function (btn) {
                 btn.classList.remove('activo');
             });
             boton.classList.add('activo');
         });
     });
 
-    // Clase Usuario
     class Usuario {
         constructor(nombre, contraseña1, registrar) {
             this.nombre = nombre;
@@ -44,15 +43,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Función para crear usuarios a partir de los datos en localStorage
     function crearUsuariosDesdeLocalStorage() {
-        // Obtener los datos de localStorage
         const usuariosAprobadosJSON = localStorage.getItem('usuariosAprobados');
-        // Verificar si hay datos en localStorage
         if (usuariosAprobadosJSON) {
-            // Convertir los datos a un array de objetos
             const usuariosAprobados = JSON.parse(usuariosAprobadosJSON);
-            // Iterar sobre los usuarios aprobados y crear instancias de Usuario
             usuariosAprobados.forEach(usuario => {
                 const usuarioInstancia = new Usuario(usuario.nombre, usuario.contraseña1, usuario.registrar);
                 baseDatosUsuarios.push(usuarioInstancia);
@@ -60,55 +54,53 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Array para almacenar instancias de Usuario
     const baseDatosUsuarios = [];
 
-    // Llamar a la función para crear usuarios desde localStorage
     crearUsuariosDesdeLocalStorage();
     console.log(baseDatosUsuarios)
 
-    formulario.addEventListener('submit', function(event) {
+    formulario.addEventListener('submit', function (event) {
         event.preventDefault();
 
         const nombreUsuarioIngresado = document.getElementById('nombreUsuario').value;
         const contraseñaIngresada = document.getElementById('contraseña').value;
         const rolSeleccionado = document.querySelector('.btn-tipo-ingreso .botn.activo').getAttribute('data-rol');
 
-        let usuarioValido = baseDatosUsuarios.find(usuario => 
-            usuario.nombre === nombreUsuarioIngresado && 
-            usuario.contraseña1 === contraseñaIngresada && 
+        let usuarioValido = baseDatosUsuarios.find(usuario =>
+            usuario.nombre === nombreUsuarioIngresado &&
+            usuario.contraseña1 === contraseñaIngresada &&
             usuario.registrar === rolSeleccionado);
 
-            if (usuarioValido) {
-                console.log('OK');
-            
-                switch (rolSeleccionado) {
-                    case 'paciente':
-                        window.location.href = "pages/paciente.html";
-                        break;
-                    case 'doctor':
-                        window.location.href = "pages/paciente.html";
-                        break;
-                    case 'administrador':
-                        window.location.href = "pages/admin.html";
-                        break;
-                    default:
-                        mostrarError();
-                        break;
-                }
-            
-                localStorage.setItem('auth', true);
-            } else {
-                console.log('FAIL');
-                mostrarError();
+        if (usuarioValido) {
+            console.log('OK');
+
+            switch (rolSeleccionado) {
+                case 'paciente':
+                    window.location.href = "pages/paciente.html";
+                    break;
+                case 'doctor':
+                    window.location.href = "pages/paciente.html";
+                    break;
+                case 'administrador':
+                    window.location.href = "pages/admin.html";
+                    break;
+                default:
+                    mostrarError();
+                    break;
             }
-            
-            function mostrarError() {
-                const mensajeError = document.getElementById('mensajeError');
-                if (mensajeError) {
-                    mensajeError.style.display = 'block';
-                }
+
+            localStorage.setItem('auth', true);
+        } else {
+            console.log('FAIL');
+            mostrarError();
+        }
+
+        function mostrarError() {
+            const mensajeError = document.getElementById('mensajeError');
+            if (mensajeError) {
+                mensajeError.style.display = 'block';
             }
-            
+        }
+
     });
 });
