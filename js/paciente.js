@@ -1,3 +1,43 @@
+/* COLOR DE PORTADA */
+document.addEventListener('DOMContentLoaded', function () {
+    const botonColor = document.getElementById('seleccionarColor');
+    const portada = document.querySelector('.perfil-usuario-portada');
+
+    // Ocultar la portada hasta que se haya cargado completamente el DOM
+    document.body.style.display = 'none';
+
+    // Obtener el color de fondo de la portada desde el localStorage al cargar la página
+    const colorGuardado = localStorage.getItem('colorPortada');
+    if (colorGuardado) {
+        // Aplicar el color guardado después de cargar el DOM
+        setTimeout(() => {
+            portada.style.backgroundImage = 'none'; // Eliminamos el gradiente
+            portada.style.backgroundColor = colorGuardado;
+            document.body.style.display = ''; // Mostrar el cuerpo (incluida la portada) después de aplicar el color
+        }, 0);
+    } else {
+        // Si no hay color guardado, simplemente muestra el cuerpo (incluida la portada)
+        document.body.style.display = '';
+    }
+
+    // Escuchar clic en el botón de selección de color
+    botonColor.addEventListener('click', function () {
+        // Abrir el selector de colores
+        const colorSeleccionado = prompt("Por favor, ingresa un color en inglés (por ejemplo, red, blue, green):");
+        if (colorSeleccionado) {
+            // Convertir el nombre del color a minúsculas
+            const colorEnMinusculas = colorSeleccionado.toLowerCase();
+            // Actualizar el color de fondo de la portada directamente en JavaScript
+            portada.style.backgroundImage = 'none'; // Eliminamos el gradiente
+            portada.style.backgroundColor = colorEnMinusculas;
+
+            // Guardar el color seleccionado en localStorage
+            localStorage.setItem('colorPortada', colorEnMinusculas);
+        }
+    });
+});
+
+
 /* FOTO DE PERFIL */
 document.addEventListener('DOMContentLoaded', function () {
     const inputAvatar = document.getElementById('input-avatar');
@@ -51,20 +91,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Espera a que el DOM esté completamente cargado para ejecutar el código
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     // Obtener referencias a los elementos del DOM
     const btnEditarDatos = document.getElementById('editarDatos'); // Botón para editar datos
     const btnGuardarCambios = document.getElementById('guardarCambios');
     const listaDatosOriginal = document.getElementById('lista-datos-original'); // Lista de datos original
-    const listaDatosEditable = document.getElementById('lista-datos-editable'); 
+    const listaDatosEditable = document.getElementById('lista-datos-editable');
     // Objeto que contiene referencias a los campos de entrada de datos
-    const inputs = { 
+    const inputs = {
         direccion: document.getElementById('input-direccion'), // Campo de dirección
-        telefono: document.getElementById('input-telefono'), 
+        telefono: document.getElementById('input-telefono'),
         ocupacion: document.getElementById('input-ocupacion'),
-        registro: document.getElementById('input-registro'), 
-        nacimiento: document.getElementById('input-nacimiento'), 
-        obraSocial: document.getElementById('input-obraSocial'), 
+        registro: document.getElementById('input-registro'),
+        nacimiento: document.getElementById('input-nacimiento'),
+        obraSocial: document.getElementById('input-obraSocial'),
     };
 
     // Mostrar campos de entrada al hacer clic en "Editar Datos"
