@@ -105,3 +105,16 @@ function mostrarUsuariosAprobados() {
         listaUsuariosAprovados.appendChild(ulElement);
     });
 }
+
+
+function subirUsuariosDeEjemplo() {
+    const usuariosDeEjemplo = [
+        {
+            "nombre": "admin",
+            "contraseña1": "admin1234",
+            "registrar": "administrador"
+        }
+    ];
+
+    localStorage.setItem('usuariosAprobados', JSON.stringify(usuariosDeEjemplo));
+}

@@ -45,22 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function subirUsuariosDeEjemplo() {
-        const usuariosDeEjemplo = [
-            new Usuario('Usuario1', 'contraseña1', '2024-02-19'),
-            new Usuario('Usuario2', 'contraseña2', '2024-02-19'),
-            new Usuario('Usuario3', 'contraseña3', '2024-02-19'),
-            {
-                "nombre": "admin",
-                "contraseña1": "admin1234",
-                "registrar": "administrador"
-            }
-        ];
-    
-        localStorage.setItem('usuariosAprobados', JSON.stringify(usuariosDeEjemplo));
-    }
-    
-    subirUsuariosDeEjemplo();
 
     
     function crearUsuariosDesdeLocalStorage() {
@@ -99,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 case 'paciente':
                     window.location.href = "pages/formulario.html";
                     break;
-                case 'doctor':
+                case 'medico':
                     window.location.href = "pages/medico.html";
                     break;
                 case 'administrador':
