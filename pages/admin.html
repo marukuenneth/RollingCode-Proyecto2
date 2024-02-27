@@ -14,78 +14,45 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row justify-content-center align-content-center">
-            <div class="col-8 barra">
-                <h4 class="text-light">
-                    <img src="/assets/rolling medical (1).png" alt="logo de rolling medical" class="logo">
-                </h4>
-            </div>
-            <div class="col-4 barra text-right">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                        <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                            <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html">
+            <img src="/assets/rolling medical (1).png" alt="logo de rolling medical" class="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user-circle user"></i>  Bienvenido Administrador
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item menuperfil cerrar" href="/index.html">
+                    <i class="fas fa-sign-out-alt m-1"></i>Cerrar Sesión
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
+      </nav>
 
     <div class="container-fluid">
         <div class="row">
             <div class="barra-lateral col-12 col-sm-auto">
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                    <a href="#" onclick="mostrarMedicos()"><i class="fas fa-user-md"></i><span>General</span></a>
-                    <a href="#" onclick="mostrarTurnos()"><i class="fas fa-calendar"></i><span>Pacientes</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Medicos</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Administradores</span></a>
-                    <a href="#" onclick="mostrarPaginaPrincipal()"><i class="fas fa-hospital"></i><span>Usuarios Aceptados</span></a>
-                    <a href="#" onclick="mostrarAnuncios()"><i
-                            class="fas fa-window-maximize"></i><span>Anuncio</span></a>
+                    <a href="#" onclick="mostrarGeneral()"><i class="fas fa-user-md"></i><span>Pendientes</span></a>
+                    <a href="#" onclick="mostrarAprobados()"><i class="fas fa-hospital"></i><span>Usuarios Aceptados</span></a>
                 </nav>
             </div>
             <main class="main col">
                 <!-- Aqui se agregaran los usuarios Pendientes del local storage -->
-                <div id="miLista">
+                <div class="pendientes" id="miLista">
                 </div>
                 <!-- Aqui se agregaran los usuarios Aprobados del local storage -->
                 <div class="aprobados" id="listaAprobados">
-                </div>
-
-                <div class="row justify-content-center align-content-center text-center">
-                    <div id="columna1" class="columna1 col-lg-6" style="display: none;">
-                        Medicoss
-                        <div>
-                            (Cuadro de opciones)
-                        </div>
-                    </div>
-                    <div id="columna2" class="columna2 col-lg-6" style="display: none;">
-                        Turnos
-                        <section id="userList">
-                            <h2>Pending Users</h2>
-                            <ul id="users">
-                                <!-- Pending user list will be displayed here -->
-                            </ul>
-                        </section>
-                    </div>
-                    <div id="columna3" class="columna3 col-lg-6" style="display: none;">
-                        Pagina Principal
-                        <div>
-                            (Cuadro de opciones)
-                        </div>
-                    </div>
-                    <div id="columna4" class="columna4 col-lg-6" style="display: none;">
-                        Anuncios
-                        <div>
-                            (Cuadro de opciones)
-                        </div>
-                    </div>
-
                 </div>
 
             </main>
