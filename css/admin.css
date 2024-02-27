@@ -3,23 +3,28 @@ body {
 }
 
 .barra {
+    display: flex;
+    flex-direction: row; /* Corregido */
+    justify-content: space-between; /* Esto asegurará que los elementos se distribuyan horizontalmente */
+    align-items: center; /* Esto alineará los ítems verticalmente en el centro */
     background: #d1d3cd;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    
+    width: 100%;
+    padding: 15px;
 }
+
 
 
 
 .logo {
-width: 50px;
+    width: 50px;
 }
+
 .dropdown-menu {
     margin: 17px;
     background: #262a34;
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
-    
+
 }
 
 .menuperfil {
@@ -38,6 +43,12 @@ width: 50px;
 
 .user {
     font-size: 35px;
+    color: #1b96d8;
+}
+
+.dropdown-toggle {
+    font-size: 20px;
+    color: #1b96d8;
 }
 
 
@@ -88,7 +99,7 @@ width: 50px;
 
 .main {
     padding-top: 10px;
-    
+
 }
 
 .main .columna {
@@ -124,23 +135,48 @@ li {
     height: auto;
 }
 
+.pendientes {
+    display: block;
+    position: absolute;
+    max-width: 100px;
+}
+
+.aprobados {
+    display: none;
+    position: absolute;
+}
+
+.text-bold {
+    display: block;
+    font-size: 30px;
+}
+
+.perfil {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+
 /*responsive*/
 
 @media screen and (max-width:1300px) {
     .barra-lateral {
         min-width: auto;
     }
+
     .barra-lateral .menu a span {
         display: none;
     }
+
     .barra-lateral .menu a i {
         margin: 0;
     }
-    .barra {
-        min-width: auto;
-    }
-    .dropdown-menu {
-        margin: 20px -79px 0px;
+
+    div.dropdown-menu.show  {
+        position: relative;
+        left: -180px;
+        bottom: -41px;
     }
 }
 
@@ -148,16 +184,20 @@ li {
     .barra-lateral {
         min-height: auto;
     }
+
     .barra-lateral .menu a {
         display: inline-block;
         border-bottom: none;
     }
-    .dropdown-menu {
+
+    /* .dropdown-menu {
         margin: 20px -78px 0px;
-    }
+    } */
+
     .logocppe {
         width: 100%;
     }
+
     body {
         background: #D3D3D3;
         font-size: 16px;
@@ -179,13 +219,16 @@ li {
     .barra-lateral {
         height: auto;
     }
+
     .barra-lateral.menu a {
         display: inline-block;
         border-bottom: none;
     }
-    .dropdown-menu {
+
+    /* .dropdown-menu {
         margin: 20px -78 0px;
-    }
+    } */
+
     body {
         font-size: 16px;
         overflow: visible;

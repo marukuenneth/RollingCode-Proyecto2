@@ -163,7 +163,7 @@
 
 @media (max-width: 767px) {
     .contenedor_formularios {
-        position: absolute;
+        position: fixed;
         margin-top: 1rem;
         
     }
